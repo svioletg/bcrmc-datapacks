@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:egg_fall_off_scaffolding",
+    "rewards": {"function": "bcrmc:egg_reward"},
+    "display": {
+        "title": {
+            "text": "Russian Doll"
+        },
+        "description": {
+            "text": "Gotta get home before the mornin' comes...\n(Die 100 times)"
+        },
+        "icon": {
+            "item": "minecraft:totem_of_undying"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

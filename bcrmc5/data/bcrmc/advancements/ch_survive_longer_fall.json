@@ -1,0 +1,25 @@
+{
+    "parent": "bcrmc:ch_survive_long_fall",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "Ankles of Bedrock"
+        },
+        "description": {
+            "text": "Survive a fall of 235m"
+        },
+        "icon": {
+            "item": "minecraft:netherite_boots",
+            "nbt": "{\"Enchantments\":[{\"id\":\"thorns\",\"lvl\":1}]}"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

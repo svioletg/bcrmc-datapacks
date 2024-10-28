@@ -1,0 +1,25 @@
+{
+    "parent": "bcrmc:easter_eggs",
+    "rewards": {"function": "bcrmc:egg_reward"},
+    "display": {
+        "title": {
+            "text": "Beware Of Dog"
+        },
+        "description": {
+            "text": "Some of us are trying to sleep around here!\n(Get killed by a Warden)"
+        },
+        "icon": {
+            "item": "minecraft:sculk_shrieker"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "killedbywarden": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {"entity": {"type": "minecraft:warden"}}
+        }
+    }
+}

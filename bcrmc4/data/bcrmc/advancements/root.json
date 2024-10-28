@@ -1,0 +1,23 @@
+{
+    "display": {
+        "title": {
+            "text": "BCR-MC 4"
+        },
+        "description": {
+            "text": "The Deep Dark Edition!"
+        },
+        "icon": {
+            "item": "minecraft:music_disc_13"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/sculk_catalyst_top.png"
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

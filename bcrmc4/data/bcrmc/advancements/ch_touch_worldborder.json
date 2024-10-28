@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:challenges",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "To the Ends of the Earth"
+        },
+        "description": {
+            "text": "Travel to the world's edge"
+        },
+        "icon": {
+            "item": "minecraft:filled_map"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

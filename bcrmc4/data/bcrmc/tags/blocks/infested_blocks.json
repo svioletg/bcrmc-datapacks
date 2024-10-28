@@ -1,0 +1,11 @@
+{
+	"values": [
+		{"id":"minecraft:infested_chiseled_stone_bricks"},
+		{"id":"minecraft:infested_cobblestone"},
+		{"id":"minecraft:infested_cracked_stone_bricks"},
+		{"id":"minecraft:infested_deepslate"},
+		{"id":"minecraft:infested_mossy_stone_bricks"},
+		{"id":"minecraft:infested_stone"},
+		{"id":"minecraft:infested_stone_bricks"}
+	]
+}

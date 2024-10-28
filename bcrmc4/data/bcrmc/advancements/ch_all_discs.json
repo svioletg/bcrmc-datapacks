@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:ch_crafted_disc_five",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "A True Fan"
+        },
+        "description": {
+            "text": "Find & collect every music disc"
+        },
+        "icon": {
+            "item": "minecraft:jukebox"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

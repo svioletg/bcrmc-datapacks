@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:challenges",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "Ankles of Iron"
+        },
+        "description": {
+            "text": "Survive a fall of 40m"
+        },
+        "icon": {
+            "item": "minecraft:iron_boots"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

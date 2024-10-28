@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:egg_break_infested_block",
+    "rewards": {"function": "bcrmc:egg_reward"},
+    "display": {
+        "title": {
+            "text": "A Gift For Someone Special"
+        },
+        "description": {
+            "text": "Instant party starter right there\n(Pick up an infested block)"
+        },
+        "icon": {
+            "item": "minecraft:dried_kelp_block"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

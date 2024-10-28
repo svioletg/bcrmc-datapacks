@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:challenges",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "Hell of a Discogs Listing"
+        },
+        "description": {
+            "text": "And now, to warp it into a bowl.\n(Restore Music Disc 5)"
+        },
+        "icon": {
+            "item": "minecraft:music_disc_5"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

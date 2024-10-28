@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:easter_eggs",
+    "rewards": {"function": "bcrmc:egg_reward"},
+    "display": {
+        "title": {
+            "text": "No Soliciting"
+        },
+        "description": {
+            "text": "They make signs for that, you know\n(Kill a Wandering Trader)"
+        },
+        "icon": {
+            "item": "minecraft:dark_oak_door"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "cut_copper",
+    "result": {
+        "id": "exposed_cut_copper"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

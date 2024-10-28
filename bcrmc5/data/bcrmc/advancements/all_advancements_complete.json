@@ -1,0 +1,21 @@
+{
+    "parent": "bcrmc:root",
+    "display": {
+        "title": {
+            "text": "Completionist"
+        },
+        "description": {
+            "text": "Complete every challenge and discover every easter egg"
+        },
+        "icon": {
+            "item": "minecraft:nether_star"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger":{"trigger":"minecraft:impossible"}
+    }
+}

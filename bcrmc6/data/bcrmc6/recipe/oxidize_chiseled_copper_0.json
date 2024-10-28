@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "chiseled_copper",
+    "result": {
+        "id": "exposed_chiseled_copper"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

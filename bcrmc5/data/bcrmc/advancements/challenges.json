@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "text": "Challenges & Goals",
+            "color": "lime"
+        },
+        "description": {
+            "text": "Assorted challenges to conquer"
+        },
+        "icon": {
+            "item": "minecraft:blaze_powder"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "parent": "bcrmc:root"
+}

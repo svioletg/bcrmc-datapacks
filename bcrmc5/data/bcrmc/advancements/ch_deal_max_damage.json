@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:challenges",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "The Spirit of Ares"
+        },
+        "description": {
+            "text": "Deal 27 damage in one hit"
+        },
+        "icon": {
+            "item": "minecraft:golden_sword"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

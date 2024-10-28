@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "exposed_copper_trapdoor",
+    "result": {
+        "id": "weathered_copper_trapdoor"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

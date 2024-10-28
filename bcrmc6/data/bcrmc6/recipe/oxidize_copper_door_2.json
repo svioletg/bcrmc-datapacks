@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "weathered_copper_door",
+    "result": {
+        "id": "oxidized_copper_door"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

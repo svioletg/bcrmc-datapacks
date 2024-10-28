@@ -1,0 +1,24 @@
+{
+    "display": {
+        "title": {
+            "text": "Easter Eggs",
+            "color": "magenta"
+        },
+        "description": {
+            "text": "Mostly hidden; how many can you discover?"
+        },
+        "icon": {
+            "item": "minecraft:axolotl_spawn_egg"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    },
+    "parent": "bcrmc:root"
+}

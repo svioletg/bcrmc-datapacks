@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:easter_eggs",
+    "rewards": {"function": "bcrmc:egg_reward"},
+    "display": {
+        "title": {
+            "text": "Strangest Guiness World Record"
+        },
+        "description": {
+            "text": "So long, and thanks for all the fish!\n(Take a bucket of fish to the height limit)"
+        },
+        "icon": {
+            "item": "minecraft:tropical_fish_bucket"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

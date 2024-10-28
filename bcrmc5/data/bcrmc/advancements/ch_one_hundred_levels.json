@@ -1,0 +1,24 @@
+{
+    "parent": "bcrmc:ch_fifty_levels",
+    "rewards": {"function": "bcrmc:challenge_reward"},
+    "display": {
+        "title": {
+            "text": "Nice End Farm You've Got There"
+        },
+        "description": {
+            "text": "Hold 100 levels of XP at once"
+        },
+        "icon": {
+            "item": "minecraft:experience_bottle"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "cmdtrigger": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}
