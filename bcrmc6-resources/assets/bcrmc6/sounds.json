@@ -1,7 +1,12 @@
 {
     "music_disc.sea": {
         "sounds": [
-            "bcrmc6:records/sea"
+            {
+                "name": "bcrmc6:music_disc.sea",
+                "attenuation_distance": 60,
+                "stream": true,
+                "type": "event"
+            }
         ]
     }
 }
