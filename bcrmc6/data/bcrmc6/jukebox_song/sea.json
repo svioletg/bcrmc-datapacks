@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc6:music_disc.sea"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc6.sea"
+    },
+    "length_in_seconds": 240.68,
+    "comparator_output": 10
+}

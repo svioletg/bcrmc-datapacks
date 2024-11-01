@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "WDW",
+        "D!D",
+        "WDW"
+    ],
+    "key": {
+        "W": "minecraft:honeycomb",
+        "D": "minecraft:black_dye",
+        "!": "#bcrmc6:valid_for_record_sea"
+    },
+    "result": {
+        "id": "minecraft:music_disc_far",
+        "components": {
+            "minecraft:jukebox_playable": {
+                "song": "bcrmc6:sea",
+                "show_in_tooltip": true
+            }
+        }
+    },
+    "show_notification": true
+}
