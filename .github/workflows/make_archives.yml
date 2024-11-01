@@ -1,0 +1,44 @@
+name: Create pack archives upon release for specified name
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  create_zips:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Extract string before hyphen from release title
+        id: extract_string
+        run: |
+          echo "RELEASE_TITLE=${{ github.event.release.name }}" >> $GITHUB_ENV
+          PREFIX=$(echo "${{ github.event.release.name }}" | cut -d'-' -f1)
+          echo "PREFIX=$PREFIX" >> $GITHUB_ENV
+
+      - name: Create ZIP archives for matching folders
+        run: |
+          PREFIX="${{ env.PREFIX }}"
+          ZIP_FILES=()
+
+          for dir in stable/${PREFIX}*; do
+            if [ -d "$dir" ]; then
+              ZIP_FILE="${dir}.zip"
+              zip -r "$ZIP_FILE" "$dir"
+              ZIP_FILES+=("$ZIP_FILE")
+            fi
+          done
+
+          echo "ZIP_FILES=${ZIP_FILES[*]}" >> $GITHUB_ENV
+
+      - name: Upload ZIPs as release assets
+        run: |
+          for zip in ${{ env.ZIP_FILES }}; do
+            echo "Uploading $zip"
+            gh release upload "${{ github.event.release.tag_name }}" "$zip" --clobber
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
