@@ -72,7 +72,7 @@ def new(server: str,
         'comparator_output': 10
     }
     with open(cwd['data'] / f'jukebox_song/{name}.json', 'w', encoding='utf-8') as f:
-        json.dump(song_entry, f)
+        json.dump(song_entry, f, indent=4)
 
     print('Making recipe...')
     items = input('Enter the IDs for every valid item, ' +
@@ -111,7 +111,7 @@ def new(server: str,
                     }
                 },
                 "show_notification": True
-            }, f)
+            }, f, indent=4)
     print('Done!')
 
 if __name__ == '__main__':

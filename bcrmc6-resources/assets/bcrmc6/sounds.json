@@ -6,5 +6,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.gbust": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/gbust",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }
