@@ -80,12 +80,15 @@ def new(server: str,
     tagpaths: dict[str, list[str]] = {}
     for i in items:
         cat, res = i.split('$')
+        print(cat, res)
         if cat not in tagpaths:
             cat = [res]
             continue
         tagpaths[cat].append(res)
     for cat, resources in tagpaths:
         for res in resources:
+            print(cat, res)
+            print(cwd['data'] / f'tags/{cat}/valid_for_record_{name}.json')
             with open(cwd['data'] / f'tags/{cat}/valid_for_record_{name}.json', 'w', encoding='utf-8') as f:
                 json.dump({'values': resources}, f)
     with open(cwd['data'] / f'recipe/music_disc_{name}.json', 'w', encoding='utf-8') as f:
