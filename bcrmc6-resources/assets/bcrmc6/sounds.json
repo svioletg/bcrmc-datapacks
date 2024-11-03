@@ -14,5 +14,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.lucky": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/lucky",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }
