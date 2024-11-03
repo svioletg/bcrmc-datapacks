@@ -1,11 +1,14 @@
 import json
-from re import Pattern
 import re
-from typing import Annotated
-import typer
-import colorama
-from colorama import Style, Fore
 from pathlib import Path
+from re import Pattern
+from typing import Annotated
+
+import colorama
+import typer
+from colorama import Fore, Style
+
+colorama.init(autoreset=True)
 
 app = typer.Typer()
 
@@ -80,17 +83,15 @@ def new(server: str,
     tagpaths: dict[str, list[str]] = {}
     for i in items:
         cat, res = i.split('$')
-        print(cat, res)
         if cat not in tagpaths:
-            cat = [res]
+            tagpaths[cat] = [res]
             continue
         tagpaths[cat].append(res)
-    for cat, resources in tagpaths:
+    for cat, resources in tagpaths.items():
         for res in resources:
-            print(cat, res)
-            print(cwd['data'] / f'tags/{cat}/valid_for_record_{name}.json')
+            Path(cwd['data'] / f'tags/{cat}').mkdir(parents=True, exist_ok=True)
             with open(cwd['data'] / f'tags/{cat}/valid_for_record_{name}.json', 'w', encoding='utf-8') as f:
-                json.dump({'values': resources}, f)
+                json.dump({'values': resources}, f, indent=4)
     with open(cwd['data'] / f'recipe/music_disc_{name}.json', 'w', encoding='utf-8') as f:
         json.dump(
             {
