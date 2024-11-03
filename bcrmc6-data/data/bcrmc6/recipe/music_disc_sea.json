@@ -1,14 +1,13 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "WDW",
-        "D!D",
-        "WDW"
+        "...",
+        ".*.",
+        "..."
     ],
     "key": {
-        "W": "minecraft:honeycomb",
-        "D": "minecraft:black_dye",
-        "!": "#bcrmc6:valid_for_record_sea"
+        ".": "minecraft:black_dye",
+        "*": "#bcrmc6:valid_for_record_sea"
     },
     "result": {
         "id": "minecraft:music_disc_far",

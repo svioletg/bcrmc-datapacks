@@ -77,6 +77,32 @@ def new(server: str,
     with open(cwd['data'] / f'jukebox_song/{name}.json', 'w', encoding='utf-8') as f:
         json.dump(song_entry, f, indent=4)
 
+    print('Preparing custom model...')
+    with open(cwd['res'] / 'models/item/music_disc_far.json', 'r', encoding='utf-8') as f:
+        base_model = json.load(f)
+    exists_flag = False
+    for i in base_model['overrides']:
+        if i['model'] == f'bcrmc6:item/music_disc_{name}':
+            model_number = i['predicate']['custom_model_data']
+            exists_flag = True
+            break
+    if not exists_flag:
+        model_number = max(obj['predicate']['custom_model_data'] for obj in base_model['overrides']) + 1
+        base_model['overrides'].append({'predicate': {'custom_model_data': model_number}, 'model': f'bcrmc6:item/music_disc_{name}'})
+
+    with open(cwd['res'] / 'models/item/music_disc_far.json', 'w', encoding='utf-8') as f:
+        json.dump(base_model, f, indent=4)
+
+    custom_model = {
+        'parent': 'minecraft:item/template_music_disc',
+        'textures': {
+            'layer0': f'bcrmc6:item/music_disc_{name}'
+        }
+    }
+
+    with open(cwd['res'] / f'models/item/music_disc_{name}.json', 'w', encoding='utf-8') as f:
+        json.dump(custom_model, f, indent=4)
+
     print('Making recipe...')
     items = input('Enter the IDs for every valid item, ' +
         'separated by comma (e.g. item$minecraft:iron_ingot):\n').split(', ')
@@ -111,7 +137,8 @@ def new(server: str,
                         "minecraft:jukebox_playable": {
                             "song": f"{server}:{name}",
                             "show_in_tooltip": True
-                        }
+                        },
+                        "minecraft:custom_model_data": model_number
                     }
                 },
                 "show_notification": True
