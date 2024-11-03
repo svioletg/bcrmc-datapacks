@@ -138,7 +138,7 @@ def new(server: str,
                             "song": f"{server}:{name}",
                             "show_in_tooltip": True
                         },
-                        "minecraft:custom_model_data": model_number
+                        "minecraft:item_model": f"bcrmc6:music_disc_{name}"
                     }
                 },
                 "show_notification": True

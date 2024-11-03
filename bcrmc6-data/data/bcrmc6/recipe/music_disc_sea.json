@@ -15,7 +15,8 @@
             "minecraft:jukebox_playable": {
                 "song": "bcrmc6:sea",
                 "show_in_tooltip": true
-            }
+            },
+            "minecraft:item_model": "bcrmc6:music_disc_sea"
         }
     },
     "show_notification": true

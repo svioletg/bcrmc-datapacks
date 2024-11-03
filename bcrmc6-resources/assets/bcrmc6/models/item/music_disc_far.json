@@ -9,6 +9,18 @@
                 "custom_model_data": 1
             },
             "model": "bcrmc6:item/music_disc_sea"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 2
+            },
+            "model": "bcrmc6:item/music_disc_gbust"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 3
+            },
+            "model": "bcrmc6:item/music_disc_lucky"
         }
     ]
 }
