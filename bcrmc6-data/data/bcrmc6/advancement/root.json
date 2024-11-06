@@ -1,0 +1,23 @@
+{
+    "display": {
+        "title": {
+            "text": "BCR-MC 6"
+        },
+        "description": {
+            "text": "Tricky Trials edition!"
+        },
+        "icon": {
+            "id": "minecraft:music_disc_13"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/block/tuff_bricks.png"
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

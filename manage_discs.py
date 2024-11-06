@@ -61,7 +61,8 @@ def new(server: str,
         json.dump(sounds, f, indent=4)
 
     print('Making jukebox_song JSON...')
-    translation = input('Disc description: ').strip()
+    translation = input('Disc description: (Artist - Title) ').strip()
+    artist, title = translation.split(' - ')
     with open(cwd['res'] / 'lang/en_us.json', 'r', encoding='utf-8') as f:
         lang_en_us = json.load(f)
     lang_en_us[f'jukebox_song.{server}.{name}'] = translation
@@ -142,6 +143,35 @@ def new(server: str,
                     }
                 },
                 "show_notification": True
+            }, f, indent=4)
+
+    print('Making advancement for recipe unlock...')
+    adv_title = input('Advancement title: ')
+    with open(cwd['data'] / f'advancement/music_disc_{name}.json', 'w', encoding='utf-8') as f:
+        json.dump(
+            {
+                "display": {
+                    "icon": {
+                        "id": "minecraft:music_disc_far",
+                        "components": {
+                            "minecraft:item_model": f"bcrmc6:music_disc_{name}"
+                        }
+                    },
+                    "title": adv_title,
+                    "description": f"Discovered the \"{title}\" music disc",
+                    "show_toast": True,
+                    "announce_to_chat": False,
+                    "hidden": True
+                },
+                "parent": "bcrmc6:root_discs",
+                "criteria": {
+                    "requirement": {
+                        "trigger": "minecraft:recipe_unlocked",
+                        "conditions": {
+                            "recipe": f"bcrmc6:music_disc_{name}"
+                        }
+                    }
+                }
             }, f, indent=4)
     print('Done!')
 

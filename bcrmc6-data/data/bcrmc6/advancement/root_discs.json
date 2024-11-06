@@ -1,0 +1,22 @@
+{
+    "display": {
+        "title": {
+            "text": "Secret Music Discs"
+        },
+        "description": {
+            "text": "How many disc recipes can you find? (Check the site for details)"
+        },
+        "icon": {
+            "id": "minecraft:jukebox"
+        },
+        "frame": "task",
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "parent": "bcrmc6:root",
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}
