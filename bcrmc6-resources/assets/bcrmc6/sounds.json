@@ -22,5 +22,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.burndown": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/burndown",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }
