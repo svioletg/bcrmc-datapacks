@@ -30,5 +30,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.rain": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/rain",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

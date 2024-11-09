@@ -27,6 +27,12 @@
                 "custom_model_data": 4
             },
             "model": "bcrmc6:item/music_disc_burndown"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 5
+            },
+            "model": "bcrmc6:item/music_disc_rain"
         }
     ]
 }
