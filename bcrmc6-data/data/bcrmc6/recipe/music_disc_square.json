@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "...",
+        ".*.",
+        "..."
+    ],
+    "key": {
+        ".": "minecraft:black_dye",
+        "*": "#bcrmc6:valid_for_record_square"
+    },
+    "result": {
+        "id": "minecraft:music_disc_far",
+        "components": {
+            "minecraft:jukebox_playable": {
+                "song": "bcrmc6:square",
+                "show_in_tooltip": true
+            },
+            "minecraft:item_model": "bcrmc6:music_disc_square"
+        }
+    },
+    "show_notification": true
+}

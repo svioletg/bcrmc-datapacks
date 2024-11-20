@@ -33,6 +33,30 @@
                 "custom_model_data": 5
             },
             "model": "bcrmc6:item/music_disc_rain"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 6
+            },
+            "model": "bcrmc6:item/music_disc_xmas"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 7
+            },
+            "model": "bcrmc6:item/music_disc_rvlution"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 8
+            },
+            "model": "bcrmc6:item/music_disc_boys"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 9
+            },
+            "model": "bcrmc6:item/music_disc_square"
         }
     ]
 }

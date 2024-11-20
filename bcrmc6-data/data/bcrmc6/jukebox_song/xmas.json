@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc6:music_disc.xmas"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc6.xmas"
+    },
+    "length_in_seconds": 245.0,
+    "comparator_output": 10
+}

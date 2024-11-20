@@ -38,5 +38,37 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.xmas": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/xmas",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rvlution": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/rvlution",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.boys": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/boys",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.square": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/square",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }
