@@ -158,7 +158,7 @@ def new(server: str,
                         }
                     },
                     "title": adv_title,
-                    "description": f"Discovered the \"{title}\" music disc",
+                    "description": f"Crafted the \"{title}\" music disc",
                     "show_toast": True,
                     "announce_to_chat": False,
                     "hidden": True

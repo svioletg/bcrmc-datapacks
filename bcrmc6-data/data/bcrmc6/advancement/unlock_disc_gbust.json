@@ -7,7 +7,7 @@
             }
         },
         "title": "Bustin'",
-        "description": "Discovered the \"Ghostbusters\" music disc",
+        "description": "Crafted the \"Ghostbusters\" music disc",
         "show_toast": true,
         "announce_to_chat": false,
         "hidden": true
