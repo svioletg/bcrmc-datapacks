@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc6:music_disc.buddydlx"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc6.buddydlx"
+    },
+    "length_in_seconds": 163.0,
+    "comparator_output": 10
+}

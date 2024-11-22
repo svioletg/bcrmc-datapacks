@@ -7,6 +7,7 @@ from typing import Annotated
 import colorama
 import typer
 from colorama import Fore, Style
+from pydub import AudioSegment
 
 colorama.init(autoreset=True)
 
@@ -45,7 +46,29 @@ def new(server: str,
     This name will be used for the sound event and any other relevant naming areas.
     """
     cwd = server_path(server)
-    print(f'Make sure {name}.ogg will be in mono!\n')
+    audio_file = cwd['res'] / f'sounds/records/{name}.ogg'
+    audio_segment: AudioSegment | None = None
+    if not audio_file.is_file():
+        print(f'WARN: No file found at {audio_file}')
+        print('This will not prevent the script from working, but the audio will not '+
+            'be able to be validated.')
+    else:
+        audio_segment = AudioSegment.from_ogg(audio_file)
+        print(f"""
+Name: {audio_file.name}
+Channels: {audio_segment.channels}
+Length (seconds): {audio_segment.duration_seconds}
+""")
+
+    if audio_segment:
+        if audio_segment.channels != 1:
+            print(f'{audio_file.name} has {audio_segment.channels} channels.')
+            q = input('Convert to mono automatically? (y/n) ')
+            if q.lower().strip() == 'y':
+                print('Setting channels to 1...')
+                audio_segment = audio_segment.set_channels(1)
+                print('Saving...')
+                audio_segment.export(audio_file)
     print('Creating entry in sounds.json...')
     with open(cwd['res'] / 'sounds.json', 'r', encoding='utf-8') as f:
         sounds = json.load(f)

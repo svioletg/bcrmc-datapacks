@@ -57,6 +57,18 @@
                 "custom_model_data": 9
             },
             "model": "bcrmc6:item/music_disc_square"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 10
+            },
+            "model": "bcrmc6:item/music_disc_buddybad"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 11
+            },
+            "model": "bcrmc6:item/music_disc_buddydlx"
         }
     ]
 }

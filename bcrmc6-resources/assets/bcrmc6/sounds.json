@@ -70,5 +70,21 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.buddybad": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/buddybad",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.buddydlx": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/buddydlx",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }
