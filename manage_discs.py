@@ -36,6 +36,22 @@ def show(server: str):
             print(highlighted(str(d), Fore.CYAN, d.parts[-1]))
 
 @app.command()
+def makecmd_give(server: str):
+    """Generates an mcfunction file to give the player all music discs listed in data/<namespace>/jukebox_song."""
+    cwd = server_path(server)
+    discs_found = [*cwd['data'].glob('jukebox_song/*.json')]
+    mcf_lines = []
+    for disc in discs_found:
+        with open(cwd['data'] / 'recipe' / f'music_disc_{disc.name}', 'r', encoding='utf-8') as f:
+            info = json.load(f)
+        comps = ', '.join([f'{k}={v if not isinstance(v, str) else f'"{v}"'}' for k, v in info['result']['components'].items()])
+        comps = re.sub(r"'(.*?)'", r'"\1"', comps)
+        mcf_lines.append(f'give @p minecraft:music_disc_far[{comps}]')
+    with open(cwd['data'] / 'function/give_custom_discs.mcfunction', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(mcf_lines))
+    print('Written.')
+
+@app.command()
 def new(server: str,
     name: Annotated[str, typer.Argument(help='OGG file name for this disc.')]
     ):
@@ -62,13 +78,14 @@ Length (seconds): {audio_segment.duration_seconds}
 
     if audio_segment:
         if audio_segment.channels != 1:
-            print(f'{audio_file.name} has {audio_segment.channels} channels.')
-            q = input('Convert to mono automatically? (y/n) ')
-            if q.lower().strip() == 'y':
-                print('Setting channels to 1...')
-                audio_segment = audio_segment.set_channels(1)
-                print('Saving...')
-                audio_segment.export(audio_file)
+            print('More than one channel. Remember to convert this to mono!')
+            # print(f'{audio_file.name} has {audio_segment.channels} channels.')
+            # q = input('Convert to mono automatically? (y/n) ')
+            # if q.lower().strip() == 'y':
+            #     print('Setting channels to 1...')
+            #     audio_segment = audio_segment.set_channels(1)
+            #     print('Saving...')
+            #     audio_segment.export(audio_file)
     print('Creating entry in sounds.json...')
     with open(cwd['res'] / 'sounds.json', 'r', encoding='utf-8') as f:
         sounds = json.load(f)
