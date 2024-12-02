@@ -144,6 +144,14 @@ Length (seconds): {audio_segment.duration_seconds}
     with open(cwd['res'] / f'models/item/music_disc_{name}.json', 'w', encoding='utf-8') as f:
         json.dump(custom_model, f, indent=4)
 
+    with open(cwd['res'] / f'items/music_disc_{name}.json', 'w', encoding='utf-8') as f:
+        json.dump({
+            'model': {
+                'type': 'minecraft:model',
+                'model': f'bcrmc6:item/music_disc_{name}'
+            }
+        }, f, indent=4)
+
     print('Making recipe...')
     items = input('Enter the IDs for every valid item, ' +
         'separated by comma (e.g. item$minecraft:iron_ingot):\n').split(', ')
