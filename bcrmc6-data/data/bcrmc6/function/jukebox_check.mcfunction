@@ -1,0 +1,1 @@
+execute if data block ~ ~ ~ RecordItem.components."minecraft:custom_data"{hidden_music:true} run data modify block ~ ~ ~ RecordItem.components merge value {"minecraft:custom_data":{hidden_music:false}, "minecraft:jukebox_playable": {show_in_tooltip:true}, "minecraft:lore":[]}

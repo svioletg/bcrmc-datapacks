@@ -14,8 +14,15 @@
         "components": {
             "minecraft:jukebox_playable": {
                 "song": "bcrmc6:sea",
-                "show_in_tooltip": true
+                "show_in_tooltip": false
             },
+            "minecraft:custom_data": {
+                "hidden_music": true
+            },
+            "lore": [
+                "\"??? - ???\"",
+                "\"(Record hasn't been played yet...)\""
+            ],
             "minecraft:item_model": "bcrmc6:music_disc_sea"
         }
     },

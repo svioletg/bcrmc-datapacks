@@ -177,8 +177,15 @@ Length (seconds): {audio_segment.duration_seconds}
                     "components": {
                         "minecraft:jukebox_playable": {
                             "song": f"{server}:{name}",
-                            "show_in_tooltip": True
+                            "show_in_tooltip": False
                         },
+                        "minecraft:custom_data": {
+                            "hidden_music": True
+                        },
+                        "lore": [
+                            "\"??? - ???\"",
+                            "\"(Record hasn't been played yet...)\""
+                        ],
                         "minecraft:item_model": f"bcrmc6:music_disc_{name}"
                     }
                 },
