@@ -69,6 +69,12 @@
                 "custom_model_data": 11
             },
             "model": "bcrmc6:item/music_disc_buddydlx"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 12
+            },
+            "model": "bcrmc6:item/music_disc_shanghai"
         }
     ]
 }

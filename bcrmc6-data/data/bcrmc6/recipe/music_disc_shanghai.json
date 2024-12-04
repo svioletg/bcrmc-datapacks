@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "...",
+        ".*.",
+        "..."
+    ],
+    "key": {
+        ".": "minecraft:black_dye",
+        "*": "#bcrmc6:valid_for_record_shanghai"
+    },
+    "result": {
+        "id": "minecraft:music_disc_far",
+        "components": {
+            "minecraft:jukebox_playable": {
+                "song": "bcrmc6:shanghai",
+                "show_in_tooltip": false
+            },
+            "minecraft:custom_data": {
+                "hidden_music": true
+            },
+            "lore": [
+                "\"??? - ???\"",
+                "\"(Record hasn't been played yet...)\""
+            ],
+            "minecraft:item_model": "bcrmc6:music_disc_shanghai"
+        }
+    },
+    "show_notification": true
+}
