@@ -86,5 +86,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.shanghai": {
+        "sounds": [
+            {
+                "name": "bcrmc6:records/shanghai",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }
