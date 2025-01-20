@@ -1,8 +1,8 @@
 {
     "values": [
+        "minecraft:lime_dye",
         "minecraft:red_dye",
         "minecraft:blue_dye",
-        "minecraft:light_blue_dye",
-        "minecraft:yellow_dye"
+        "minecraft:light_blue_dye"
     ]
 }

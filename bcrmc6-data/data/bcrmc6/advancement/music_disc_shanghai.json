@@ -6,7 +6,7 @@
                 "minecraft:item_model": "bcrmc6:music_disc_shanghai"
             }
         },
-        "title": "Born Again Overnight",
+        "title": "Born Again, Overnight",
         "description": "Crafted the \"Shanghai\" music disc",
         "show_toast": true,
         "announce_to_chat": false,
