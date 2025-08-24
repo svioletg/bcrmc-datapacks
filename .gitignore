@@ -1,4 +1,4 @@
 __pycache__/
-*/assets/*/sounds/records/*.ogg
+*-resources/assets/*/sounds/records/*.ogg
 !bcrmc6-resources/assets/bcrmc6/sounds/records/sea.ogg
 *.zip
