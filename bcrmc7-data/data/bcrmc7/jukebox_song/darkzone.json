@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.darkzone"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.darkzone"
+    },
+    "length_in_seconds": 139.0,
+    "comparator_output": 10
+}

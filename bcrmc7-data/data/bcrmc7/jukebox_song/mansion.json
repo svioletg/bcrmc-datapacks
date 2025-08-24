@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.mansion"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.mansion"
+    },
+    "length_in_seconds": 65.0,
+    "comparator_output": 10
+}

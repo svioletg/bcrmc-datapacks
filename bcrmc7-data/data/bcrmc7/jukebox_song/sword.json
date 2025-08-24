@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.sword"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.sword"
+    },
+    "length_in_seconds": 137.0,
+    "comparator_output": 10
+}

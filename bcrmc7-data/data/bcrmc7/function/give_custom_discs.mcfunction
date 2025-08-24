@@ -6,3 +6,11 @@ give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:lucky", mine
 give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:rvlution", minecraft:item_model="bcrmc7:music_disc_rvlution"]
 give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:square", minecraft:item_model="bcrmc7:music_disc_square"]
 give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:xmas", minecraft:item_model="bcrmc7:music_disc_xmas"]
+
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:darkzone", minecraft:item_model="bcrmc7:music_disc_darkzone"]
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:glowsnow", minecraft:item_model="bcrmc7:music_disc_glowsnow"]
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:mansion", minecraft:item_model="bcrmc7:music_disc_mansion"]
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:paradise", minecraft:item_model="bcrmc7:music_disc_paradise"]
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:raisebat", minecraft:item_model="bcrmc7:music_disc_raisebat"]
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:rudrbust", minecraft:item_model="bcrmc7:music_disc_rudrbust"]
+give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:sword", minecraft:item_model="bcrmc7:music_disc_sword"]

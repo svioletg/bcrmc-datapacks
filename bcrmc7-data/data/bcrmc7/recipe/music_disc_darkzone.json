@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "...",
+    ".*.",
+    "..."
+  ],
+  "key": {
+    ".": "minecraft:black_dye",
+    "*": "#bcrmc7:valid_for_record_darkzone"
+  },
+  "result": {
+    "id": "minecraft:music_disc_far",
+    "components": {
+      "minecraft:jukebox_playable": "bcrmc7:darkzone",
+      "minecraft:item_model": "bcrmc7:music_disc_darkzone"
+    }
+  },
+  "show_notification": true
+}

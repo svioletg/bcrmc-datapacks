@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.paradise"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.paradise"
+    },
+    "length_in_seconds": 151.0,
+    "comparator_output": 10
+}

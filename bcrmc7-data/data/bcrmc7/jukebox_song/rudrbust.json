@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.rudrbust"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.rudrbust"
+    },
+    "length_in_seconds": 107.0,
+    "comparator_output": 10
+}

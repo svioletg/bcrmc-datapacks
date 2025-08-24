@@ -94,5 +94,61 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.darkzone": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/darkzone",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rudrbust": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/rudrbust",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.glowsnow": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/glowsnow",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.mansion": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/mansion",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.paradise": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/paradise",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.raisebat": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/raisebat",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.sword": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/sword",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

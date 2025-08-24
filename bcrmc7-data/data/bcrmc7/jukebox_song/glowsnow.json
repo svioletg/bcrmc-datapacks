@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.glowsnow"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.glowsnow"
+    },
+    "length_in_seconds": 143.0,
+    "comparator_output": 10
+}

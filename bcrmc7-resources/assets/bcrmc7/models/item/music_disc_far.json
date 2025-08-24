@@ -75,6 +75,48 @@
                 "custom_model_data": 12
             },
             "model": "bcrmc7:item/music_disc_shanghai"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 13
+            },
+            "model": "bcrmc7:item/music_disc_darkzone"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 14
+            },
+            "model": "bcrmc7:item/music_disc_rudrbust"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 15
+            },
+            "model": "bcrmc7:item/music_disc_glowsnow"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 16
+            },
+            "model": "bcrmc7:item/music_disc_mansion"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 17
+            },
+            "model": "bcrmc7:item/music_disc_paradise"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 18
+            },
+            "model": "bcrmc7:item/music_disc_raisebat"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 19
+            },
+            "model": "bcrmc7:item/music_disc_sword"
         }
     ]
 }
