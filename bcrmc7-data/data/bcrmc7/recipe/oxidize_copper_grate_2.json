@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "weathered_copper_grate",
+    "result": {
+        "id": "oxidized_copper_grate"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

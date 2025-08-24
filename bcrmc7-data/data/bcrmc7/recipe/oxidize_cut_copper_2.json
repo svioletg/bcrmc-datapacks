@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "weathered_cut_copper",
+    "result": {
+        "id": "oxidized_cut_copper"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.rvlution"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.rvlution"
+    },
+    "length_in_seconds": 100.0,
+    "comparator_output": 10
+}

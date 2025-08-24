@@ -1,0 +1,98 @@
+{
+    "music_disc.sea": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/sea",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.gbust": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/gbust",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.lucky": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/lucky",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.burndown": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/burndown",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rain": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/rain",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.xmas": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/xmas",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rvlution": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/rvlution",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.boys": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/boys",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.square": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/square",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.buddybad": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/buddybad",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.buddydlx": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/buddydlx",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.shanghai": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/shanghai",
+                "attenuation_distance": 16
+            }
+        ]
+    }
+}

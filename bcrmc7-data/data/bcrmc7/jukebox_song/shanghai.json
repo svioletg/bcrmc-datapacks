@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.shanghai"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.shanghai"
+    },
+    "length_in_seconds": 250.0,
+    "comparator_output": 10
+}

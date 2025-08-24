@@ -1,0 +1,80 @@
+{
+    "parent": "minecraft:item/template_music_disc",
+    "textures": {
+        "layer0": "minecraft:item/music_disc_far"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "custom_model_data": 1
+            },
+            "model": "bcrmc7:item/music_disc_sea"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 2
+            },
+            "model": "bcrmc7:item/music_disc_gbust"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 3
+            },
+            "model": "bcrmc7:item/music_disc_lucky"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 4
+            },
+            "model": "bcrmc7:item/music_disc_burndown"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 5
+            },
+            "model": "bcrmc7:item/music_disc_rain"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 6
+            },
+            "model": "bcrmc7:item/music_disc_xmas"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 7
+            },
+            "model": "bcrmc7:item/music_disc_rvlution"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 8
+            },
+            "model": "bcrmc7:item/music_disc_boys"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 9
+            },
+            "model": "bcrmc7:item/music_disc_square"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 10
+            },
+            "model": "bcrmc7:item/music_disc_buddybad"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 11
+            },
+            "model": "bcrmc7:item/music_disc_buddydlx"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 12
+            },
+            "model": "bcrmc7:item/music_disc_shanghai"
+        }
+    ]
+}

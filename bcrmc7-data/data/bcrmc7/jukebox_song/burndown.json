@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.burndown"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.burndown"
+    },
+    "length_in_seconds": 245.0,
+    "comparator_output": 10
+}

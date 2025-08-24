@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.square"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.square"
+    },
+    "length_in_seconds": 245.0,
+    "comparator_output": 10
+}

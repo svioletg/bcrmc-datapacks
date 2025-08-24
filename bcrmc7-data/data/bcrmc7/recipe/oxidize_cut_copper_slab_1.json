@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "exposed_cut_copper_slab",
+    "result": {
+        "id": "weathered_cut_copper_slab"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}
