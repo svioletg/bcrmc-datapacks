@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "exposed_copper_lantern",
+    "result": {
+        "id": "weathered_copper_lantern"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}

@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": "weathered_copper_bars",
+    "result": {
+        "id": "oxidized_copper_bars"
+    },
+    "experience": 0.0,
+    "cookingtime": 400
+}
