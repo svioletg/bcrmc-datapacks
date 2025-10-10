@@ -1,5 +1,7 @@
 {
     "values": [
-        "minecraft:diamond_axe"
+        "minecraft:diamond_axe",
+        "minecraft:wind_charge",
+        "minecraft:sunflower"
     ]
 }

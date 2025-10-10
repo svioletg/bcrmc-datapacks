@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "id": "minecraft:music_disc_far",
+            "components": {
+                "minecraft:item_model": "bcrmc7:music_disc_shanghai"
+            }
+        },
+        "title": "Born Again, Overnight",
+        "description": "Crafted the \"Shanghai\" music disc",
+        "show_toast": true,
+        "announce_to_chat": false,
+        "hidden": true
+    },
+    "parent": "bcrmc7:root_discs",
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "bcrmc7:music_disc_shanghai"
+            }
+        }
+    }
+}
