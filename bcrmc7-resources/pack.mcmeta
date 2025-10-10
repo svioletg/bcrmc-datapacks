@@ -1,7 +1,7 @@
 {
     "pack": {
         "min_format": 67.0,
-        "max_format": 67.0,
+        "max_format": 69.0,
         "description": "Resource pack for the BCR-MC 7 datapack."
     }
 }
