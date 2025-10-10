@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[[ $# -ne 1 ]] && echo "Expected 1 argument: build <server>" && exit 1
+
+TOP=$(pwd)
+
+STAMP=$(date +%Y-%m-%dT%H%M%S%z)
+
+echo "-- Building datapack from $1-data"
+cd "$TOP/$1-data" && zip -FSr "$TOP/dist/$1-data_$STAMP.zip" .
+
+echo "-- Building resource pack from $1-resources"
+cd "$TOP/$1-resources" && zip -FSr "$TOP/dist/$1-resources_$STAMP.zip" .
