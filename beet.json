@@ -1,0 +1,13 @@
+{
+    "name": "BCR-MC Season 7 Datapack",
+    "description": "",
+
+    "data_pack": {
+        "load": ["datapack"]
+    },
+    "pipeline": [
+        "bplugin.fn_give_custom_discs"
+    ],
+
+    "output": "dist"
+}

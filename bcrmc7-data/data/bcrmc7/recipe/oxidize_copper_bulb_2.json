@@ -1,9 +1,0 @@
-{
-    "type": "smelting",
-    "ingredient": "weathered_copper_bulb",
-    "result": {
-        "id": "oxidized_copper_bulb"
-    },
-    "experience": 0.0,
-    "cookingtime": 400
-}

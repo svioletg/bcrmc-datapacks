@@ -1,9 +1,0 @@
-{
-    "type": "smelting",
-    "ingredient": "exposed_chiseled_copper",
-    "result": {
-        "id": "weathered_chiseled_copper"
-    },
-    "experience": 0.0,
-    "cookingtime": 400
-}

@@ -1,22 +1,22 @@
 #!/bin/bash
 
-[[ $# -ne 1 ]] && echo "Expected 1 argument: build <server>" && exit 1
+SEASON="bcrmc7"
 
 TOP=$(pwd)
 
 STAMP=$(date +%Y-%m-%dT%H%M%S%z)
 
-DATAPACK_FNAME="$1-datapack_$STAMP.zip"
-RESPACK_FNAME="$1-resources_$STAMP.zip"
+DATAPACK_FNAME="$SEASON-datapack_$STAMP.zip"
+RESPACK_FNAME="$SEASON-resources_$STAMP.zip"
 
-echo "-- Building datapack from $1-data"
-cd "$TOP/$1-data" && zip -FSr "$TOP/dist/$DATAPACK_FNAME" .
+echo "-- Building datapack from datapack/"
+cd "$TOP/datapack" && zip -FSr "$TOP/dist/$DATAPACK_FNAME" .
 
-echo "-- Building resource pack from $1-resources"
-cd "$TOP/$1-resources" && zip -FSr "$TOP/dist/$RESPACK_FNAME" .
+echo "-- Building resource pack from resources/"
+cd "$TOP/resources" && zip -FSr "$TOP/dist/$RESPACK_FNAME" .
 
 echo "-- Symlinking datapack as latest"
-ln -s "$TOP/dist/$DATAPACK_FNAME" "$TOP/dist/$1-datapack_latest.zip"
+ln -sf "$TOP/dist/$DATAPACK_FNAME" "$TOP/dist/$SEASON-datapack_latest.zip"
 
 echo "-- Symlinking resource pack as latest"
-ln -s "$TOP/dist/$RESPACK_FNAME" "$TOP/dist/$1-resources_latest.zip"
+ln -sf "$TOP/dist/$RESPACK_FNAME" "$TOP/dist/$SEASON-resources_latest.zip"

@@ -1,9 +1,0 @@
-{
-    "type": "smelting",
-    "ingredient": "exposed_copper",
-    "result": {
-        "id": "weathered_copper"
-    },
-    "experience": 0.0,
-    "cookingtime": 400
-}
