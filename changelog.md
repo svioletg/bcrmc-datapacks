@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Datapack
+
+- Removed functions `jukebox_check`, `jukebox_click`, and `jukebox_raycast`
+
 ## [bcrmc7-2025.10.10a] - 2025-10-10
 
 ### Datapack

@@ -1,10 +1,36 @@
+from pathlib import Path
+
 from beet import Context, Function
 
+WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
-def fn_give_custom_discs(ctx: Context) -> None:
-    ctx.data.functions['bcrmc7:give_custom_discs'] = Function(
-        [
-            f'give @p minecraft:music_disc_far[minecraft:jukebox_playable="{song}", minecraft:item_model="bcrmc7:music_disc_{song.split(':')[-1]}"]'
-            for song in ctx.data.jukebox_songs
-        ],
-    )
+GAMERULES: dict[str, str] = {
+    'keepInventory': 'true',
+    'mobGriefing': 'false',
+    'doFireTick': 'false',
+}
+
+def mcfunction_path(namespace: str, name: str) -> Path:
+    return Path(f'datapack/data/{namespace}/function/{name}.mcfunction')
+
+def build_functions(ctx: Context) -> None:
+    namespace: str = ctx.project_name
+
+    ctx.data.functions[f'{namespace}:gamerules'] = (fn_gamerules := Function())
+    for world in WORLDS:
+        for rule, state in GAMERULES.items():
+            fn_gamerules.lines.append(
+                f'tellraw @a {{"text":"{namespace}: in {world}; gamerule {rule} {state}", "color": "yellow"}}',
+            )
+            fn_gamerules.lines.append(f'execute in {world} run gamerule {rule} {state}')
+
+    ctx.data.functions[f'{namespace}:worldborder'] = (fn_worldborder := Function())
+    for world in WORLDS:
+        fn_worldborder.lines.append(f'execute in {world} run worldborder set 12000')
+
+    ctx.data.functions[f'{namespace}:give_custom_discs'] = (fn_give_custom_discs := Function())
+    for song in ctx.data.jukebox_songs:
+        fn_give_custom_discs.lines.append(
+            f'give @p minecraft:music_disc_far[minecraft:jukebox_playable="{song}",'
+            + f'minecraft:item_model="{namespace}:music_disc_{song.split(':')[-1]}"]',
+        )
