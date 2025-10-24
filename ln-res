@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -s "$(pwd)/resources" "$HOME/.minecraft/resourcepacks/LINKED-bcrmc-resources"

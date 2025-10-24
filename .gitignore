@@ -1,6 +1,5 @@
 __pycache__/
 .beet_cache/
-*-resources/assets/*/sounds/records/*.ogg
-!bcrmc6-resources/assets/bcrmc6/sounds/records/sea.ogg
+**/assets/*/sounds/records/
 dist/
 *.zip

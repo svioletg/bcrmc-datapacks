@@ -2,6 +2,8 @@
 
 SEASON="bcrmc7"
 
+echo "Building packs for season $SEASON"
+
 TOP=$(pwd)
 
 STAMP=$(date +%Y-%m-%dT%H%M%S%z)

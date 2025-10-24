@@ -1,5 +1,6 @@
 from beet import Context, Function
 
+
 def fn_give_custom_discs(ctx: Context) -> None:
     ctx.data.functions['bcrmc7:give_custom_discs'] = Function(
         [

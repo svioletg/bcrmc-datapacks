@@ -14,10 +14,3 @@ give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:shanghai", m
 give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:square", minecraft:item_model="bcrmc7:music_disc_square"]
 give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:sword", minecraft:item_model="bcrmc7:music_disc_sword"]
 give @p minecraft:music_disc_far[minecraft:jukebox_playable="bcrmc7:xmas", minecraft:item_model="bcrmc7:music_disc_xmas"]
-
-
-
-
-
-
-give @p minecraft:music_disc_far[minecraft:jukebox_playable=""]

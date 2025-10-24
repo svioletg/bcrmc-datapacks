@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function usage {
+    echo "usage: ln-data WORLD_NAME"
+}
+
+[[ $# -ne 1 ]] && usage && exit 1
+
+WORLD="$1"
+
+ln -s "$(pwd)/datapack" "$HOME/.minecraft/saves/$WORLD/datapacks/LINKED-bcrmc-datapack"
