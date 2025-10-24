@@ -1,5 +1,6 @@
 __pycache__/
 .beet_cache/
+.venv/
 **/assets/*/sounds/records/
 dist/
 *.zip
