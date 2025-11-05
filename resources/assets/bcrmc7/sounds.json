@@ -150,5 +150,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.yesheart": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/yesheart",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

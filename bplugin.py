@@ -5,9 +5,9 @@ from beet import Context, Function
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
 GAMERULES: dict[str, str] = {
-    'keepInventory': 'true',
-    'mobGriefing': 'false',
-    'doFireTick': 'false',
+    'keep_inventory': 'true',
+    'mob_griefing': 'false',
+    'fire_spread_radius_around_player': '0',
 }
 
 def mcfunction_path(namespace: str, name: str) -> Path:

@@ -117,6 +117,12 @@
                 "custom_model_data": 19
             },
             "model": "bcrmc7:item/music_disc_sword"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 20
+            },
+            "model": "bcrmc7:item/music_disc_yesheart"
         }
     ]
 }

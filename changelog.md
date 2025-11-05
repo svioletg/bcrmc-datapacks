@@ -4,7 +4,21 @@
 
 ### Datapack
 
+- 1 new music disc added
+  <details>
+  <summary>(Secret content spoilers; click to reveal)</summary>
+
+  - `yesheart`: *Owner of a Lonely Heart*, Yes
+  </details>
+
+- `min_format` changed to 92, `max_format` changed to 93
 - Removed functions `jukebox_check`, `jukebox_click`, and `jukebox_raycast`
+- Updated gamerule names per 25w44a changes
+  - `doFireTick` removed, added rule for `fire_spread_radius_around_player`
+
+### Resource pack
+
+- `max_format` changed to 73
 
 ## [bcrmc7-2025.10.10a] - 2025-10-10
 

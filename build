@@ -8,17 +8,17 @@ TOP=$(pwd)
 
 STAMP=$(date +%Y-%m-%dT%H%M%S%z)
 
-DATAPACK_FNAME="$SEASON-datapack_$STAMP.zip"
-RESPACK_FNAME="$SEASON-resources_$STAMP.zip"
+DATAPACK_FNAME="${SEASON}-datapack_${STAMP}.zip"
+RESPACK_FNAME="${SEASON}-resources_${STAMP}.zip"
 
 echo "-- Building datapack from datapack/"
-cd "$TOP/datapack" && zip -FSr "$TOP/dist/$DATAPACK_FNAME" .
+cd "${TOP}/dist/${SEASON}_data_pack" && zip -FSr "${TOP}/dist/${DATAPACK_FNAME}" .
 
 echo "-- Building resource pack from resources/"
-cd "$TOP/resources" && zip -FSr "$TOP/dist/$RESPACK_FNAME" .
+cd "${TOP}/resources" && zip -FSr "${TOP}/dist/${RESPACK_FNAME}" .
 
 echo "-- Symlinking datapack as latest"
-ln -sf "$TOP/dist/$DATAPACK_FNAME" "$TOP/dist/$SEASON-datapack_latest.zip"
+ln -sf "${TOP}/dist/${DATAPACK_FNAME}" "${TOP}/dist/${SEASON}-datapack_latest.zip"
 
 echo "-- Symlinking resource pack as latest"
-ln -sf "$TOP/dist/$RESPACK_FNAME" "$TOP/dist/$SEASON-resources_latest.zip"
+ln -sf "${TOP}/dist/${RESPACK_FNAME}" "${TOP}/dist/${SEASON}-resources_latest.zip"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DISC="$1"
+
+ffprobe -i "resources/assets/bcrmc7/sounds/records/${DISC}.ogg" -show_entries format=duration -v quiet | rg 'duration=(.*)' -r '$1'
