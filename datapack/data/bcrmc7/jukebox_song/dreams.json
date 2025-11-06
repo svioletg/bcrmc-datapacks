@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc7:music_disc.dreams"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc7.dreams"
+    },
+    "length_in_seconds": 257.64,
+    "comparator_output": 10
+}

@@ -158,5 +158,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.dreams": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/dreams",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

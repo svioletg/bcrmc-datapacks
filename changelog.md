@@ -4,10 +4,11 @@
 
 ### Datapack
 
-- 1 new music disc added
+- 2 new music discs added
   <details>
   <summary>(Secret content spoilers; click to reveal)</summary>
 
+  - `dreams`: *Dreams*, Fleetwood Mac
   - `yesheart`: *Owner of a Lonely Heart*, Yes
   </details>
 
@@ -19,6 +20,7 @@
 ### Resource pack
 
 - `max_format` changed to 73
+- Remove `music_dar_far` item model, no longer necessary to override it
 
 ## [bcrmc7-2025.10.10a] - 2025-10-10
 
