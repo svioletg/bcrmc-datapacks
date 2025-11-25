@@ -12,14 +12,14 @@
   - `yesheart`: *Owner of a Lonely Heart*, Yes
   </details>
 
-- `min_format` changed to 92, `max_format` changed to 93
+- `min_format` changed to 94.0, `max_format` changed to 94.0
 - Removed functions `jukebox_check`, `jukebox_click`, and `jukebox_raycast`
 - Updated gamerule names per 25w44a changes
   - `doFireTick` removed, added rule for `fire_spread_radius_around_player`
 
 ### Resource pack
 
-- `max_format` changed to 73
+- `max_format` changed to 75.0
 - Remove `music_dar_far` item model, no longer necessary to override it
 
 ## [bcrmc7-2025.10.10a] - 2025-10-10
