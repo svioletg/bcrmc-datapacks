@@ -1,6 +1,9 @@
+import json
 from pathlib import Path
 
-from beet import Context, Function
+from beet import Context, Function, LootTable
+
+from util import Maybe
 
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
@@ -34,3 +37,21 @@ def build_functions(ctx: Context) -> None:
             f'give @p minecraft:music_disc_far[minecraft:jukebox_playable="{song}",'
             + f'minecraft:item_model="{namespace}:music_disc_{song.split(':')[-1]}"]',
         )
+
+def make_disc_loot_entries(ctx: Context) -> None:
+    loot_table_dir: Path = \
+        Maybe(ctx.output_directory).unwrap() / f'{ctx.project_name}_data_pack/data/{ctx.project_name}/loot_table'
+    for song in ctx.data.jukebox_songs:
+        loot_table = LootTable({
+            'pools': [{'rolls': 1, 'entries': [{
+                'type': 'minecraft:item',
+                'name': 'minecraft:music_disc_far',
+                'functions': [{
+                    'function': 'set_components',
+                    'components': {
+                        'minecraft:jukebox_playable': song,
+                    },
+                }],
+            }]}],
+        })
+        ctx.data.loot_tables[f'disc_{song.split(':')[-1]}'] = loot_table

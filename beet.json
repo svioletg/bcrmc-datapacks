@@ -6,7 +6,8 @@
         "load": ["datapack"]
     },
     "pipeline": [
-        "bplugin.build_functions"
+        "bplugin.build_functions",
+        "bplugin.make_disc_loot_entries"
     ],
 
     "output": "dist"
