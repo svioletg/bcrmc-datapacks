@@ -12,10 +12,12 @@
   - `yesheart`: *Owner of a Lonely Heart*, Yes
   </details>
 
-- `min_format` changed to 94.0, `max_format` changed to 94.0
+- `min_format` changed to 92.0, `max_format` changed to 94.1
 - Removed functions `jukebox_check`, `jukebox_click`, and `jukebox_raycast`
 - Updated gamerule names per 25w44a changes
   - `doFireTick` removed, added rule for `fire_spread_radius_around_player`
+- Custom music disc recipes now use the `#bcrmc7:record_wax` tag for the border item instead of only Black Dye
+  - Dried Kelp added to the `#bcrmc7:record_wax` tag
 
 ### Resource pack
 

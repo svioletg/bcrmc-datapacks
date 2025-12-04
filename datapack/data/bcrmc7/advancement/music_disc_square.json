@@ -6,7 +6,7 @@
                 "minecraft:item_model": "bcrmc7:music_disc_square"
             }
         },
-        "title": "if i add this one it makes it an even 16 discs",
+        "title": "BeeJoke",
         "description": "Crafted the \"It's Hip to Be Square\" music disc",
         "show_toast": true,
         "announce_to_chat": false,
