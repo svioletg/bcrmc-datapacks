@@ -39,8 +39,6 @@ def build_functions(ctx: Context) -> None:
         )
 
 def make_disc_loot_entries(ctx: Context) -> None:
-    loot_table_dir: Path = \
-        Maybe(ctx.output_directory).unwrap() / f'{ctx.project_name}_data_pack/data/{ctx.project_name}/loot_table'
     for song in ctx.data.jukebox_songs:
         loot_table = LootTable({
             'pools': [{'rolls': 1, 'entries': [{
@@ -54,4 +52,4 @@ def make_disc_loot_entries(ctx: Context) -> None:
                 }],
             }]}],
         })
-        ctx.data.loot_tables[f'disc_{song.split(':')[-1]}'] = loot_table
+        ctx.data.loot_tables[f'{ctx.project_name}:disc_{song.split(':')[-1]}'] = loot_table
