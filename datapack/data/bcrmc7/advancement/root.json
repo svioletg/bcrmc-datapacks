@@ -1,12 +1,11 @@
 {
   "display": {
     "title": {
-      "text": "BCR-MC 7"
+      "translate": "advancements.bcrmc7.root.title"
     },
-    "description": [
-      {"text": "Chase the Skies", "color": "aqua"},
-      {"text": " edition!", "color": "white"}
-    ],
+    "description": {
+      "translate": "advancements.bcrmc7.root.description"
+    },
     "icon": {
       "id": "minecraft:music_disc_13"
     },

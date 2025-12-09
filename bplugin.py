@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from beet import Context, Function, LootTable
+from beet import Advancement, Context, Function, LootTable
 
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
@@ -14,29 +14,27 @@ def get_mcfunction_path(namespace: str, name: str) -> Path:
     return Path(f'datapack/data/{namespace}/function/{name}.mcfunction')
 
 def build_functions(ctx: Context) -> None:
-    namespace: str = ctx.project_name
-
-    ctx.data.functions[f'{namespace}:gamerules'] = (fn_gamerules := Function())
+    ctx.data.functions[f'{ctx.project_name}:gamerules'] = (fn_gamerules := Function())
     for world in WORLDS:
         for rule, state in GAMERULES.items():
             fn_gamerules.lines.append(
-                f'tellraw @a {{"text":"{namespace}: in {world}; gamerule {rule} {state}", "color": "yellow"}}',
+                f'tellraw @a {{"text":"{ctx.project_name}: in {world}; gamerule {rule} {state}", "color": "yellow"}}',
             )
             fn_gamerules.lines.append(f'execute in {world} run gamerule {rule} {state}')
 
-    ctx.data.functions[f'{namespace}:worldborder'] = (fn_worldborder := Function())
+    ctx.data.functions[f'{ctx.project_name}:worldborder'] = (fn_worldborder := Function())
     for world in WORLDS:
         fn_worldborder.lines.append(f'execute in {world} run worldborder set 12000')
 
-    ctx.data.functions[f'{namespace}:give_custom_discs'] = (fn_give_custom_discs := Function())
-    for song in ctx.data.jukebox_songs:
-        fn_give_custom_discs.lines.append(
-            f'give @p minecraft:music_disc_far[minecraft:jukebox_playable="{song}",'
-            + f'minecraft:item_model="{namespace}:music_disc_{song.split(':')[-1]}"]',
-        )
+    ctx.data.functions[f'{ctx.project_name}:give_custom_discs'] = (fn_give_custom_discs := Function())
+    for resource in ctx.data.jukebox_songs:
+        namespace, song = resource.split(':')
+        fn_give_custom_discs.lines.append(f'loot give @p loot {namespace}:disc_{song}')
 
 def make_disc_loot_entries(ctx: Context) -> None:
-    for song in ctx.data.jukebox_songs:
+    for resource in ctx.data.jukebox_songs:
+        namespace, song = resource.split(':')
+
         loot_table = LootTable({
             'pools': [{'rolls': 1, 'entries': [{
                 'type': 'minecraft:item',
@@ -44,9 +42,51 @@ def make_disc_loot_entries(ctx: Context) -> None:
                 'functions': [{
                     'function': 'set_components',
                     'components': {
-                        'minecraft:jukebox_playable': song,
+                        'minecraft:jukebox_playable': resource,
+                        'minecraft:item_model': f'{namespace}:music_disc_{song}',
                     },
                 }],
             }]}],
         })
+
         ctx.data.loot_tables[f'{ctx.project_name}:disc_{song.split(':')[-1]}'] = loot_table
+
+def make_disc_advancements(ctx: Context) -> None:
+    raisebat_title_component: list[dict[str, str | bool]] = [
+        {"text": "RAISE UP YOUR BAT FOR "},
+        {"text": "THE BURNING FIGHT", "strikethrough": True},
+        {"text": " BASEBALL DELIGHT", "bold": True},
+    ]
+
+    for resource in ctx.data.jukebox_songs:
+        namespace, song = resource.split(':')
+
+        adv = Advancement({
+            "display": {
+                "icon": {
+                    "id": "minecraft:music_disc_far",
+                    "components": {
+                        "minecraft:item_model": f"{namespace}:music_disc_{song}",
+                    },
+                },
+                "title":
+                    raisebat_title_component if song == 'raisebat' else
+                    {"translate": f"advancements.{namespace}.music_disc_{song}.title"}
+                ,
+                "description": {"translate": f"advancements.{namespace}.music_disc_{song}.description"},
+                "show_toast": True,
+                "announce_to_chat": False,
+                "hidden": True,
+            },
+            "parent": f"{namespace}:root_discs",
+            "criteria": {
+                "requirement": {
+                    "trigger": "minecraft:recipe_unlocked",
+                    "conditions": {
+                        "recipe": f"{namespace}:music_disc_{song}",
+                    },
+                },
+            },
+        })
+
+        ctx.data.advancements[f'{namespace}:music_disc_{song}'] = adv

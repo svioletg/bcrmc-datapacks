@@ -19,11 +19,13 @@
 - Custom music disc recipes now use the `#bcrmc7:record_wax` tag for the border item instead of only Black Dye
   - Dried Kelp added to the `#bcrmc7:record_wax` tag
 - Loot table entries have been added for all custom music discs, for consistent usage
+- Certain custom music discs can now have their recipes unlocked by meeting secret criteria instead of only crafting the disc
 
 ### Resource pack
 
 - `max_format` changed to 75.0
 - Remove `music_disc_far` item model, no longer necessary to override it
+- Added `lang/en_us.json` entries for advancement titles and descriptions
 
 ## [bcrmc7-2025.10.10a] - 2025-10-10
 

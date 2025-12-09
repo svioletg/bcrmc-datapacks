@@ -1,10 +1,10 @@
 {
     "display": {
         "title": {
-            "text": "Secret Music Discs"
+            "translate": "advancements.bcrmc7.root_discs.title"
         },
         "description": {
-            "text": "Collect them all! (Check the site for details)"
+            "translate": "advancements.bcrmc7.root_discs.description"
         },
         "icon": {
             "id": "minecraft:jukebox"
