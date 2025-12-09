@@ -9,6 +9,7 @@
   <summary>(Secret content spoilers; click to reveal)</summary>
 
   - `dreams`: *Dreams*, Fleetwood Mac
+  - `tickride`: *Ticket To Ride*, The Beatles
   - `yesheart`: *Owner of a Lonely Heart*, Yes
   </details>
 
@@ -20,6 +21,7 @@
   - Dried Kelp added to the `#bcrmc7:record_wax` tag
 - Loot table entries have been added for all custom music discs, for consistent usage
 - Certain custom music discs can now have their recipes unlocked by meeting secret criteria instead of only crafting the disc
+- Custom music disc advancements, loot table entries, and recipes are now generated with [`beet`](https://github.com/mcbeet/beet/)
 
 ### Resource pack
 

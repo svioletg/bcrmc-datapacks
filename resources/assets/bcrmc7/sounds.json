@@ -166,5 +166,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.tickride": {
+        "sounds": [
+            {
+                "name": "bcrmc7:records/tickride",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

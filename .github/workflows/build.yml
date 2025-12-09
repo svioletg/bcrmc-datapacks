@@ -1,0 +1,32 @@
+name: Build datapack with beet
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    build:
+        name: Build datapack with beet
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set up Python 3.13
+              uses: actions/setup-python@v3
+              with:
+                python-version: "3.13"
+            - name: Install project dependencies
+              run: |
+                pip install -r requirements.txt
+            - name: Build with beet
+              run: |
+                beet build
+                cd dist/*_data_pack
+                zip -FSr ../bcrmc-datapack.zip .
+            - name: Upload datapack ZIP to release
+              uses: svenstaro/upload-release-action@v2
+              with:
+                repo_token: ${{secrets.GITHUB_TOKEN}}
+                file: dist/bcrmc-datapack.zip
+                asset_name: bcrmc-datapack.zip
+                tag: ${{github.ref}}
+                overwrite: true

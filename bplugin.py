@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from beet import Advancement, Context, Function, LootTable
+from beet import Advancement, Context, Function, LootTable, Recipe
 
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
@@ -90,3 +90,30 @@ def make_disc_advancements(ctx: Context) -> None:
         })
 
         ctx.data.advancements[f'{namespace}:music_disc_{song}'] = adv
+
+def make_disc_recipes(ctx: Context) -> None:
+    for resource in ctx.data.jukebox_songs:
+        namespace, song = resource.split(':')
+
+        recipe = Recipe({
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "...",
+                ".*.",
+                "...",
+            ],
+            "key": {
+                ".": f"#{namespace}:record_wax",
+                "*": f"#{namespace}:valid_for_record_{song}",
+            },
+            "result": {
+                "id": "minecraft:music_disc_far",
+                "components": {
+                "minecraft:jukebox_playable": f"{namespace}:{song}",
+                "minecraft:item_model": f"{namespace}:music_disc_{song}",
+                },
+            },
+            "show_notification": True,
+        })
+
+        ctx.data.recipes[f'{namespace}:music_disc_{song}'] = recipe

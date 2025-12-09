@@ -35,6 +35,8 @@
     "advancements.bcrmc7.music_disc_square.description": "Crafted the \"It's Hip to Be Square\" music disc",
     "advancements.bcrmc7.music_disc_sword.title": "SWORD",
     "advancements.bcrmc7.music_disc_sword.description": "Crafted the \"SWORD\" music disc (or, crafted a Netherite Sword)",
+    "advancements.bcrmc7.music_disc_tickride.title": "My Baby Don't Care",
+    "advancements.bcrmc7.music_disc_tickride.description": "Crafted the \"Ticket To Ride\" music disc (or, travelled 10km by Minecart)",
     "advancements.bcrmc7.music_disc_xmas.title": "The Moon is Right",
     "advancements.bcrmc7.music_disc_xmas.description": "Crafted the \"Wonderful Christmastime\" music disc",
     "advancements.bcrmc7.music_disc_yesheart.title": "You've Got To Want To Succeed",
@@ -56,6 +58,7 @@
     "jukebox_song.bcrmc7.shanghai": "King Gizzard & The Lizard Wizard - Shanghai",
     "jukebox_song.bcrmc7.square": "Huey Lewis & The News - Hip To Be Square",
     "jukebox_song.bcrmc7.sword": "Toby Fox - SWORD",
+    "jukebox_song.bcrmc7.tickride": "Ticket To Ride - The Beatles",
     "jukebox_song.bcrmc7.xmas": "Paul McCartney - Wonderful Christmastime",
     "jukebox_song.bcrmc7.yesheart": "Yes - Owner of a Lonely Heart"
 }
