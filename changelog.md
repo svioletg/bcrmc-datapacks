@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [bcrmc7-2025.12.09] - 2025-12-09
 
 ### Datapack
 
