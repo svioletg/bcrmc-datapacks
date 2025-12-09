@@ -11,6 +11,8 @@ STAMP=$(date +%Y-%m-%dT%H%M%S%z)
 DATAPACK_FNAME="${SEASON}-datapack_${STAMP}.zip"
 RESPACK_FNAME="${SEASON}-resources_${STAMP}.zip"
 
+.venv/bin/beet build
+
 echo "-- Building datapack from datapack/"
 cd "${TOP}/dist/${SEASON}_data_pack" && zip -FSr "${TOP}/dist/${DATAPACK_FNAME}" .
 
