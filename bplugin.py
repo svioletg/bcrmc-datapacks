@@ -1,9 +1,6 @@
-import json
 from pathlib import Path
 
 from beet import Context, Function, LootTable
-
-from util import Maybe
 
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
@@ -13,7 +10,7 @@ GAMERULES: dict[str, str] = {
     'fire_spread_radius_around_player': '0',
 }
 
-def mcfunction_path(namespace: str, name: str) -> Path:
+def get_mcfunction_path(namespace: str, name: str) -> Path:
     return Path(f'datapack/data/{namespace}/function/{name}.mcfunction')
 
 def build_functions(ctx: Context) -> None:

@@ -12,17 +12,18 @@
   - `yesheart`: *Owner of a Lonely Heart*, Yes
   </details>
 
-- `min_format` changed to 92.0, `max_format` changed to 94.1
+- `min_format` and `max_format` changed to 94.1
 - Removed functions `jukebox_check`, `jukebox_click`, and `jukebox_raycast`
 - Updated gamerule names per 25w44a changes
   - `doFireTick` removed, added rule for `fire_spread_radius_around_player`
 - Custom music disc recipes now use the `#bcrmc7:record_wax` tag for the border item instead of only Black Dye
   - Dried Kelp added to the `#bcrmc7:record_wax` tag
+- Loot table entries have been added for all custom music discs, for consistent usage
 
 ### Resource pack
 
 - `max_format` changed to 75.0
-- Remove `music_dar_far` item model, no longer necessary to override it
+- Remove `music_disc_far` item model, no longer necessary to override it
 
 ## [bcrmc7-2025.10.10a] - 2025-10-10
 
