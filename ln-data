@@ -7,7 +7,8 @@ function usage {
 [[ $# -ne 1 ]] && usage && exit 1
 
 WORLD="$1"
+WORLD=$(echo "${WORLD}" | tr '.' '_')
 LN_TARGET="$HOME/.minecraft/saves/$WORLD/datapacks/LINKED-bcrmc-datapack"
 
-rm "$LN_TARGET"
+rm -f "$LN_TARGET"
 ln -s "$(pwd)/dist/bcrmc7_data_pack" "$LN_TARGET"
