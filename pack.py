@@ -5,9 +5,9 @@ from beet import Advancement, Context, Function, LootTable, Recipe
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
 GAMERULES: dict[str, str] = {
-    'keep_inventory': 'true',
-    'mob_griefing': 'false',
-    'fire_spread_radius_around_player': '0',
+    'keepInventory': 'true',
+    'mobGriefing': 'false',
+    'doFireTick': 'false',
 }
 
 def get_mcfunction_path(namespace: str, name: str) -> Path:
