@@ -87,6 +87,11 @@ def make_disc_advancements(ctx: Context) -> None:
                     },
                 },
             },
+            "rewards": {
+                "recipes": [
+                    f"{namespace}:music_disc_{song}",
+                ],
+            },
         })
 
         ctx.data.advancements[f'{namespace}:music_disc_{song}'] = adv

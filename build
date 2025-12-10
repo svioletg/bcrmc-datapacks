@@ -13,6 +13,14 @@ RESPACK_FNAME="${SEASON}-resources_${STAMP}.zip"
 
 .venv/bin/beet build
 
+BEET_EXIT=$?
+
+if [[ $BEET_EXIT -ne 0 ]]; then
+    echo "!!! beet build exited with non-zero status ${}"
+    echo "Aborting."
+    exit $BEET_EXIT
+fi
+
 echo "-- Building datapack from datapack/"
 cd "${TOP}/dist/${SEASON}_data_pack" && zip -FSr "${TOP}/dist/${DATAPACK_FNAME}" .
 

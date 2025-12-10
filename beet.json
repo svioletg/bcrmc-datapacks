@@ -6,9 +6,10 @@
         "load": ["datapack"]
     },
     "pipeline": [
-        "bplugin.build_functions",
-        "bplugin.make_disc_loot_entries",
-        "bplugin.make_disc_advancements"
+        "pack.build_functions",
+        "pack.make_disc_loot_entries",
+        "pack.make_disc_advancements",
+        "pack.make_disc_recipes"
     ],
 
     "output": "dist"

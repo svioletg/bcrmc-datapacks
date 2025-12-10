@@ -1,5 +1,12 @@
 # Changelog
 
+## [bcrmc7-2025.12.09a] - 2025-12-09
+
+### Datapack
+
+- Fixed custom music disc recipes not being unlocked upon being granted the corresponding advancement
+- Fixed recipes mistakenly not being included as a result of missing the recipe build step in `beet.json`
+
 ## [bcrmc7-2025.12.09] - 2025-12-09
 
 ### Datapack
