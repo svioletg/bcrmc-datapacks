@@ -1,5 +1,17 @@
 # Changelog
 
+## [bcrmc7-2025.12.23] - 2025-12-23
+
+### Datapack
+
+- Added advancement criteria to one music disc
+  <details>
+  <summary>(Secret content spoilers; click to reveal)</summary>
+
+  - `raisebat`: *Raise Up Your Bat*, Toby Fox
+    - Now unlocked when granted the "Return to Sender" advancement
+  </details>
+
 ## [bcrmc7-2025.12.09a] - 2025-12-09
 
 ### Datapack

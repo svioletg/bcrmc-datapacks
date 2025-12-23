@@ -6,3 +6,4 @@ execute as @a run execute if score @s sb.used.totem_of_undying matches 1.. run a
 execute as @a run execute if score @s sb.custom.boat_one_cm matches 10000000.. run advancement grant @s only bcrmc7:music_disc_paradise
 execute as @a run execute if score @s sb.crafted.netherite_sword matches 1.. run advancement grant @s only bcrmc7:music_disc_sword
 execute as @a run execute if score @s sb.custom.minecart_one_cm matches 1000000.. run advancement grant @s only bcrmc7:music_disc_tickride
+execute as @a[advancements={minecraft:nether/return_to_sender=true}] run advancement grant @s only bcrmc7:music_disc_raisebat

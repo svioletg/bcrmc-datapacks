@@ -1,4 +1,8 @@
+import re
+from collections.abc import Callable
+from operator import add, floordiv, mul, sub
 from pathlib import Path
+from typing import Any
 
 from beet import Advancement, Context, Function, LootTable, Recipe
 
@@ -10,10 +14,48 @@ GAMERULES: dict[str, str] = {
     'fire_spread_radius_around_player': '0',
 }
 
+FORLOOP_REGEX: re.Pattern[str] = re.compile(
+    r"#for (?P<ivar>\w+) in (?P<items>\w+);(?P<content>.*)#endfor",
+    flags=re.DOTALL | re.MULTILINE,
+)
+EXPR_REGEX: re.Pattern[str] = re.compile(r"{{(?P<expr>.+)}}")
+
+EXPR_MATH_INFIX: dict[str, Callable[[int, int], int]] = {
+    '+': add,
+    '-': sub,
+    '*': mul,
+    '/': floordiv,
+}
+
+def parse_expr(expr: str, context: dict[str, Any]) -> Any:  # noqa: ANN401
+    if expr.startswith('#'):
+        return len(context[expr.removeprefix('#')])
+    if ops_in_expr := [op for op in EXPR_MATH_INFIX if op in expr]:
+        if len(ops_in_expr) > 1:
+            print(f'ERR: Expression can only have one math operator: {expr}')
+            return None
+        op: str = ops_in_expr[0]
+        a, b = (parse_expr(e, context) for e in expr.split(op))
+        if (not a) or (not b):
+            print(f'ERR: One or both of the operands in this expression are empty: {expr}')
+            return None
+        return EXPR_MATH_INFIX[op](int(a), int(b))
+    return context[expr]
+
 def get_mcfunction_path(namespace: str, name: str) -> Path:
     return Path(f'datapack/data/{namespace}/function/{name}.mcfunction')
 
 def build_functions(ctx: Context) -> None:
+    # init
+    fn_init: Function = ctx.data.functions[f'{ctx.project_name}:init']
+    for n, ln in enumerate(fn_init.lines):
+        if ln.startswith('#$'):
+            fn_init.lines[n] = ln.replace(
+                '#$calc_disc_total',
+                f'scoreboard players set $bcrmc7 bcrmc7.CUSTOM_DISCS_TOTAL {len(ctx.data.jukebox_songs)}',
+            )
+
+    # gamerules
     ctx.data.functions[f'{ctx.project_name}:gamerules'] = (fn_gamerules := Function())
     for world in WORLDS:
         for rule, state in GAMERULES.items():
@@ -22,10 +64,12 @@ def build_functions(ctx: Context) -> None:
             )
             fn_gamerules.lines.append(f'execute in {world} run gamerule {rule} {state}')
 
+    # worldborder
     ctx.data.functions[f'{ctx.project_name}:worldborder'] = (fn_worldborder := Function())
     for world in WORLDS:
         fn_worldborder.lines.append(f'execute in {world} run worldborder set 12000')
 
+    # give_custom_discs
     ctx.data.functions[f'{ctx.project_name}:give_custom_discs'] = (fn_give_custom_discs := Function())
     for resource in ctx.data.jukebox_songs:
         namespace, song = resource.split(':')
