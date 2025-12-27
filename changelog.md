@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased]
+
+### Datapack
+
+- Changed score checking in function `check_disc_criteria` to use entity selectors instead of `if` tests
+- Function `init` now runs on datapack load
+- Added "flag" scoreboard objectives for certain triggered criteria
+- Added ability to define and parse "comment macros" (lines starting with `#$`) in mcfunction files during the build step in `pack.py`
+
 ## [bcrmc7-2025.12.23] - 2025-12-23
 
 ### Datapack

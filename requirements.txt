@@ -1,5 +1,6 @@
 beet>=0.112.0
 ipython>=9.6.0
+loguru>=0.7.3
 mecha>=0.99.0
 pydantic>=2.12.4
 ruff>=0.14
