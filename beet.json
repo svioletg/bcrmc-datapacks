@@ -6,6 +6,7 @@
         "load": ["datapack"]
     },
     "pipeline": [
+        "pack.build_advancements",
         "pack.build_functions",
         "pack.make_disc_loot_entries",
         "pack.make_disc_advancements",

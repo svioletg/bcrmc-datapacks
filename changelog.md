@@ -4,11 +4,15 @@
 
 ### Datapack
 
-- Added advancement explaining how to smelt copper to oxidize it
+- Added advancement introducing manual copper oxidation (`manual_oxidation`)
+  - Unlocks all copper oxidation smelting recipes
+- Added advancement introducing Haste potions (`haste_potion`)
+  - Unlocks all Potion of Haste recipes
 - Changed score checking in function `check_disc_criteria` to use entity selectors instead of `if` tests
 - Function `init` now runs on datapack load
 - Added "flag" scoreboard objectives for certain triggered criteria
 - Added ability to define and parse "comment macros" (lines starting with `#$`) in mcfunction files during the build step in `pack.py`
+- Added recipes `potion_haste`, `potion_haste_long`, and `potion_haste_ii`
 
 ## [bcrmc7-2025.12.23] - 2025-12-23
 

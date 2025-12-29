@@ -73,8 +73,11 @@ def parse_expr(expr: str, context: dict[str, Any]) -> Any:  # noqa: ANN401
         return EXPR_MATH_INFIX[op](int(a), int(b))
     return context[expr]
 
-def get_mcfunction_path(namespace: str, name: str) -> Path:
-    return Path(f'datapack/data/{namespace}/function/{name}.mcfunction')
+def build_advancements(ctx: Context) -> None:
+    adv_copper_oxidation: Advancement = ctx.data.advancements[f'{ctx.project_name}:manual_oxidation']
+    adv_copper_oxidation.data['rewards'] = {'recipes': [
+        recipe for recipe in ctx.data.recipes if ':oxidize_' in recipe
+    ]}
 
 def build_functions(ctx: Context) -> None:
     def parse_fn(mcfunction: Function) -> list[str]:

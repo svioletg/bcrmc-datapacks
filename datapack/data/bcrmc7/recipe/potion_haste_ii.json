@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:potion",
+    "minecraft:nether_wart",
+    "minecraft:cocoa_beans",
+    "minecraft:sugar",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "id": "potion",
+    "components": {
+      "minecraft:potion_contents": {
+        "custom_color": 16380011,
+        "custom_name": "haste",
+        "custom_effects": [
+          {
+            "id": "minecraft:haste",
+            "amplifier": 1,
+            "duration": 1800
+          }
+        ]
+      }
+    }
+  }
+}
