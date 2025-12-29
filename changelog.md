@@ -4,6 +4,7 @@
 
 ### Datapack
 
+- Added advancement explaining how to smelt copper to oxidize it
 - Changed score checking in function `check_disc_criteria` to use entity selectors instead of `if` tests
 - Function `init` now runs on datapack load
 - Added "flag" scoreboard objectives for certain triggered criteria

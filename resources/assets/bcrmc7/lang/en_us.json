@@ -1,8 +1,4 @@
 {
-    "advancements.bcrmc7.root.title": "BCR-MC 7",
-    "advancements.bcrmc7.root.description": "§bChase the Skies§f edition!",
-    "advancements.bcrmc7.root_discs.title": "Secret Music Discs",
-    "advancements.bcrmc7.root_discs.description": "Collect them all! (Check the site for details)",
     "advancements.bcrmc7.music_disc_buddybad.title": "weezer blue album free download virus free",
     "advancements.bcrmc7.music_disc_buddybad.description": "Crafted the \"Buddy Holly\" music disc...?",
     "advancements.bcrmc7.music_disc_buddydlx.title": "Weezer Blue Album Official Download",
@@ -41,6 +37,12 @@
     "advancements.bcrmc7.music_disc_xmas.description": "Crafted the \"Wonderful Christmastime\" music disc",
     "advancements.bcrmc7.music_disc_yesheart.title": "You've Got To Want To Succeed",
     "advancements.bcrmc7.music_disc_yesheart.description": "Crafted the \"Owner of a Lonely Heart\" music disc",
+    "advancements.bcrmc7.root.title": "BCR-MC 7",
+    "advancements.bcrmc7.root.description": "§bChase the Skies§f edition!",
+    "advancements.bcrmc7.root_discs.title": "Secret Music Discs",
+    "advancements.bcrmc7.root_discs.description": "Collect them all! (Check the site for details!)",
+    "advancements.bcrmc7.manual_oxidation.title": "Manual Copper Oxidation",
+    "advancements.bcrmc7.manual_oxidation.description": "Smelt any kind of copper block to advance its oxidation by one stage",
 
     "jukebox_song.bcrmc7.buddybad": "weezer buddy holy free download online mp3",
     "jukebox_song.bcrmc7.buddydlx": "Weezer - Buddy Holly",
