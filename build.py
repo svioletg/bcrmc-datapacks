@@ -1,77 +1,11 @@
-import re
 import sys
-from collections.abc import Callable
-from operator import add, floordiv, mul, sub
-from pathlib import Path
-from typing import Any
 
 from beet import Advancement, Context, Function, LootTable, Recipe
-from loguru import logger
 
-logger.remove()
+from const import GAMERULES, WORLDS, logger
+from parser import parse_fn
 
 logger.add(sys.stdout, level='INFO', format='<level>[{time:%H:%M:%S} {level}] {message}</level>')
-
-WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
-
-GAMERULES: dict[str, str] = {
-    'keep_inventory': 'true',
-    'mob_griefing': 'false',
-    'fire_spread_radius_around_player': '0',
-}
-
-FORLOOP_REGEX: re.Pattern[str] = re.compile(
-    r"#for (?P<ivar>\w+) in (?P<items>\w+);(?P<content>.*)#endfor",
-    flags=re.DOTALL | re.MULTILINE,
-)
-EXPR_REGEX: re.Pattern[str] = re.compile(r"{{(?P<expr>.+)}}")
-
-EXPR_MATH_INFIX: dict[str, Callable[[int, int], int]] = {
-    '+': add,
-    '-': sub,
-    '*': mul,
-    '/': floordiv,
-}
-
-CRITERIA_REGEX: re.Pattern[str] = re.compile(r"(\w+)\.(\w+):(\w+)\.(\w+)")
-
-FLAGGED_CRITERIA: dict[str, str] = {
-    criteria:CRITERIA_REGEX.sub('\\2.\\4', criteria)
-    for criteria in (
-        'minecraft.custom:minecraft.sleep_in_bed',
-    )
-}
-
-MCFUNC_COMMENT_MACRO_PREFIX: str = '#$'
-
-MCFUNC_COMMENT_MACRO_DEFS: dict[str, str | list[str] | Callable[[Context], str | list[str]]] = {
-    'calc_disc_total':
-        (lambda ctx: f'scoreboard players set $bcrmc7 bcrmc7.CUSTOM_DISCS_TOTAL {len(ctx.data.jukebox_songs)}'),
-    'create_criteria_flags': [
-        f'scoreboard objectives add bcrmc7.criteria_flag.{objname} {criteria}'
-        for criteria, objname in FLAGGED_CRITERIA.items()
-    ],
-    'reset_criteria_flags': [
-        f'scoreboard players set @a bcrmc7.criteria_flag.{objname} 0'
-        for _, objname in FLAGGED_CRITERIA.items()
-    ],
-}
-
-def parse_expr(expr: str, context: dict[str, Any]) -> Any:  # noqa: ANN401
-    raise NotImplementedError
-    if expr.startswith('#'):
-        return len(context[expr.removeprefix('#')])
-    if ops_in_expr := [op for op in EXPR_MATH_INFIX if op in expr]:
-        if len(ops_in_expr) > 1:
-            print(f'ERR: Expression can only have one math operator: {expr}')
-            return None
-        op: str = ops_in_expr[0]
-        a, b = (parse_expr(e, context) for e in expr.split(op))
-        if (not a) or (not b):
-            print(f'ERR: One or both of the operands in this expression are empty: {expr}')
-            return None
-        return EXPR_MATH_INFIX[op](int(a), int(b))
-    return context[expr]
 
 def build_advancements(ctx: Context) -> None:
     adv_copper_oxidation: Advancement = ctx.data.advancements[f'{ctx.project_name}:manual_oxidation']
@@ -80,40 +14,13 @@ def build_advancements(ctx: Context) -> None:
     ]}
 
 def build_functions(ctx: Context) -> None:
-    def parse_fn(mcfunction: Function) -> list[str]:
-        parsed: list[str] = []
-        for line in mcfunction.lines:
-            if not line.startswith(MCFUNC_COMMENT_MACRO_PREFIX):
-                parsed.append(line)
-                continue
-            key = line.removeprefix('#$')
-            if key not in MCFUNC_COMMENT_MACRO_DEFS:
-                logger.warning(f'Undefined: {key}')
-                continue
-            if isinstance(repl := MCFUNC_COMMENT_MACRO_DEFS[key], Callable):
-                repl = repl(ctx)
-            parsed.append(repl if isinstance(repl, str) else '\n'.join(repl))
-        return parsed
-
     # init
     fn_init: Function = ctx.data.functions[f'{ctx.project_name}:init']
-    fn_init.lines = parse_fn(fn_init)
+    fn_init.lines = parse_fn(ctx, fn_init)
 
     # tick
     fn_tick: Function = ctx.data.functions[f'{ctx.project_name}:tick']
-    fn_tick_built: list[str] = []
-    for ln in fn_tick.lines:
-        if ln.startswith('#$reset_criteria_flags'):
-            fn_tick_built.append(ln.replace(
-                '#$reset_criteria_flags',
-                '\n'.join(
-                    f'scoreboard players set @a bcrmc7.criteria_flag.{objname} 0'
-                    for _, objname in FLAGGED_CRITERIA.items()
-                ),
-            ))
-            continue
-        fn_tick_built.append(ln)
-    fn_tick.lines = fn_tick_built.copy()
+    fn_tick.lines = parse_fn(ctx, fn_tick)
 
     # gamerules
     ctx.data.functions[f'{ctx.project_name}:gamerules'] = (fn_gamerules := Function())

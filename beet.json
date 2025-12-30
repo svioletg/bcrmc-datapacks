@@ -6,11 +6,11 @@
         "load": ["datapack"]
     },
     "pipeline": [
-        "pack.build_advancements",
-        "pack.build_functions",
-        "pack.make_disc_loot_entries",
-        "pack.make_disc_advancements",
-        "pack.make_disc_recipes"
+        "build.build_advancements",
+        "build.build_functions",
+        "build.make_disc_loot_entries",
+        "build.make_disc_advancements",
+        "build.make_disc_recipes"
     ],
 
     "output": "dist"
