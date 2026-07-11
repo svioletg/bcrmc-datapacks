@@ -1,16 +1,25 @@
 {
   "type": "minecraft:brewing",
   "input": {
-    "item": "minecraft:potion",
+    "item": "minecraft:lingering_potion",
     "potion_contents": {
-      "potions": "minecraft:awkward"
+      "effects": {
+        "contains": [
+          {
+            "minecraft:haste": {
+              "amplifier": 0,
+              "duration": 3600
+            }
+          }
+        ]
+      }
     }
   },
   "reagent": {
-    "item": "minecraft:cocoa_beans"
+    "item": "minecraft:redstone"
   },
   "output": {
-    "id": "minecraft:potion",
+    "id": "minecraft:lingering_potion",
     "components": {
       "minecraft:potion_contents": {
         "custom_color": 16380011,
@@ -19,7 +28,7 @@
           {
             "id": "minecraft:haste",
             "amplifier": 0,
-            "duration": 3600,
+            "duration": 9600,
             "ambient": false,
             "show_particles": true,
             "show_icon": true

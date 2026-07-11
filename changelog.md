@@ -5,6 +5,8 @@
 ### Datapack
 
 - `min_format` and `max_format` are now 11.0
+- Haste potion crafting table recipes have been replaced with proper brewing recipes
+  - Use cocoa beans to brew
 
 ### Resource pack
 

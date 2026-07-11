@@ -47,6 +47,8 @@
     "advancements.bcrmc.manual_oxidation.description": "Smelt any kind of copper block to advance its oxidation by one stage",
 
     "item.minecraft.potion.effect.haste": "Potion of Haste",
+    "item.minecraft.splash_potion.effect.haste": "Splash Potion of Haste",
+    "item.minecraft.lingering_potion.effect.haste": "Lingering Potion of Haste",
 
     "jukebox_song.bcrmc.buddybad": "weezer buddy holy free download online mp3",
     "jukebox_song.bcrmc.buddydlx": "Weezer - Buddy Holly",
