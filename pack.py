@@ -232,3 +232,11 @@ def make_disc_recipes(ctx: Context) -> None:
         })
 
         ctx.data.recipes[f'bcrmc:music_disc_{song}'] = recipe
+
+def main() -> int:
+    print(__version__)
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
