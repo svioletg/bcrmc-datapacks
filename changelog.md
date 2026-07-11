@@ -1,5 +1,11 @@
 # Changelog
 
+## [bcrmc7-26.3]
+
+### Datapack
+
+### Resource pack
+
 ## [bcrmc7-2026.01.06] - 2026-01-06
 
 ### Datapack
