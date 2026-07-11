@@ -1,0 +1,22 @@
+{
+    "display": {
+        "title": {
+            "translate": "advancements.bcrmc.root_discs.title"
+        },
+        "description": {
+            "translate": "advancements.bcrmc.root_discs.description"
+        },
+        "icon": {
+            "id": "minecraft:jukebox"
+        },
+        "frame": "task",
+        "announce_to_chat": false,
+        "hidden": false
+    },
+    "parent": "bcrmc:root",
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

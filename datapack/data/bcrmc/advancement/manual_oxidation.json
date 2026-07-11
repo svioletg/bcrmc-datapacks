@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "oxidized_copper"
+    },
+    "title": {
+      "translate": "advancements.bcrmc.manual_oxidation.title"
+    },
+    "description": {
+      "translate": "advancements.bcrmc.manual_oxidation.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "parent": "bcrmc:root",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ]
+}

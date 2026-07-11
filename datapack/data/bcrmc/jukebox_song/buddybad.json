@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc:music_disc.buddybad"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc.buddybad"
+    },
+    "length_in_seconds": 162.0,
+    "comparator_output": 10
+}

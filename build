@@ -1,15 +1,11 @@
 #!/bin/bash
 
-SEASON="bcrmc7"
-
-echo "Building packs for season $SEASON"
-
 TOP=$(pwd)
 
 STAMP=$(date +%Y-%m-%dT%H%M%S%z)
 
-DATAPACK_FNAME="${SEASON}-datapack_${STAMP}.zip"
-RESPACK_FNAME="${SEASON}-resources_${STAMP}.zip"
+DATAPACK_FNAME="bcrmc-datapack_${STAMP}.zip"
+RESPACK_FNAME="bcrmc-resources_${STAMP}.zip"
 
 .venv/bin/beet build
 
@@ -22,13 +18,13 @@ if [[ $BEET_EXIT -ne 0 ]]; then
 fi
 
 echo "-- Building datapack from datapack/"
-cd "${TOP}/dist/${SEASON}_data_pack" && zip -FSr "${TOP}/dist/${DATAPACK_FNAME}" .
+cd "${TOP}/dist/bcrmc_data_pack" && zip -FSr "${TOP}/dist/${DATAPACK_FNAME}" .
 
 echo "-- Building resource pack from resources/"
 cd "${TOP}/resources" && zip -FSr "${TOP}/dist/${RESPACK_FNAME}" .
 
 echo "-- Symlinking datapack as latest"
-ln -sf "${TOP}/dist/${DATAPACK_FNAME}" "${TOP}/dist/${SEASON}-datapack_latest.zip"
+ln -sf "${TOP}/dist/${DATAPACK_FNAME}" "${TOP}/dist/bcrmc-datapack_latest.zip"
 
 echo "-- Symlinking resource pack as latest"
-ln -sf "${TOP}/dist/${RESPACK_FNAME}" "${TOP}/dist/${SEASON}-resources_latest.zip"
+ln -sf "${TOP}/dist/${RESPACK_FNAME}" "${TOP}/dist/bcrmc-resources_latest.zip"

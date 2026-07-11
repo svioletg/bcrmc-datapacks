@@ -11,4 +11,4 @@ WORLD=$(echo "${WORLD}" | tr '.' '_')
 LN_TARGET="$HOME/.minecraft/saves/$WORLD/datapacks/LINKED-bcrmc-datapack"
 
 rm -f "$LN_TARGET"
-ln -s "$(pwd)/dist/bcrmc7_data_pack" "$LN_TARGET"
+ln -s "$(pwd)/dist/bcrmc_data_pack" "$LN_TARGET"

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:golden_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.bcrmc.haste_potion.title"
+    },
+    "description": {
+      "translate": "advancements.bcrmc.haste_potion.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "parent": "bcrmc:root",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bcrmc:potion_haste",
+      "bcrmc:potion_haste_long",
+      "bcrmc:potion_haste_ii"
+    ]
+  }
+}

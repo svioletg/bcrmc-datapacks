@@ -1,0 +1,178 @@
+{
+    "music_disc.sea": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/sea",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.gbust": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/gbust",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.lucky": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/lucky",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.burndown": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/burndown",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rain": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/rain",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.xmas": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/xmas",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rvlution": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/rvlution",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.boys": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/boys",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.square": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/square",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.buddybad": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/buddybad",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.buddydlx": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/buddydlx",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.shanghai": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/shanghai",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.darkzone": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/darkzone",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.rudrbust": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/rudrbust",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.glowsnow": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/glowsnow",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.mansion": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/mansion",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.paradise": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/paradise",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.raisebat": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/raisebat",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.sword": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/sword",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.yesheart": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/yesheart",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.dreams": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/dreams",
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music_disc.tickride": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/tickride",
+                "attenuation_distance": 16
+            }
+        ]
+    }
+}

@@ -1,3 +1,4 @@
+import json
 import re
 import sys
 from collections.abc import Callable
@@ -11,6 +12,8 @@ from loguru import logger
 logger.remove()
 
 logger.add(sys.stdout, level='INFO', format='<level>[{time:%H:%M:%S} {level}] {message}</level>')
+
+BEET_JSON: dict[str, Any] = json.loads(Path('beet.json').read_text('utf-8'))
 
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
 
@@ -46,13 +49,14 @@ MCFUNC_COMMENT_MACRO_PREFIX: str = '#$'
 
 MCFUNC_COMMENT_MACRO_DEFS: dict[str, str | list[str] | Callable[[Context], str | list[str]]] = {
     'calc_disc_total':
-        (lambda ctx: f'scoreboard players set $bcrmc7 bcrmc7.CUSTOM_DISCS_TOTAL {len(ctx.data.jukebox_songs)}'),
+        (lambda ctx:
+            f'scoreboard players set $bcrmc bcrmc.CUSTOM_DISCS_TOTAL {len(ctx.data.jukebox_songs)}'),
     'create_criteria_flags': [
-        f'scoreboard objectives add bcrmc7.criteria_flag.{objname} {criteria}'
+        f'scoreboard objectives add bcrmc.criteria_flag.{objname} {criteria}'
         for criteria, objname in FLAGGED_CRITERIA.items()
     ],
     'reset_criteria_flags': [
-        f'scoreboard players set @a bcrmc7.criteria_flag.{objname} 0'
+        f'scoreboard players set @a bcrmc.criteria_flag.{objname} 0'
         for _, objname in FLAGGED_CRITERIA.items()
     ],
 }
@@ -107,7 +111,7 @@ def build_functions(ctx: Context) -> None:
             fn_tick_built.append(ln.replace(
                 '#$reset_criteria_flags',
                 '\n'.join(
-                    f'scoreboard players set @a bcrmc7.criteria_flag.{objname} 0'
+                    f'scoreboard players set @a bcrmc.criteria_flag.{objname} 0'
                     for _, objname in FLAGGED_CRITERIA.items()
                 ),
             ))
@@ -133,7 +137,7 @@ def build_functions(ctx: Context) -> None:
     ctx.data.functions[f'{ctx.project_name}:give_custom_discs'] = (fn_give_custom_discs := Function())
     for resource in ctx.data.jukebox_songs:
         namespace, song = resource.split(':')
-        fn_give_custom_discs.lines.append(f'loot give @p loot {namespace}:disc_{song}')
+        fn_give_custom_discs.lines.append(f'loot give @p loot bcrmc:disc_{song}')
 
 def make_disc_loot_entries(ctx: Context) -> None:
     for resource in ctx.data.jukebox_songs:
@@ -147,7 +151,7 @@ def make_disc_loot_entries(ctx: Context) -> None:
                     'function': 'set_components',
                     'components': {
                         'minecraft:jukebox_playable': resource,
-                        'minecraft:item_model': f'{namespace}:music_disc_{song}',
+                        'minecraft:item_model': f'bcrmc:music_disc_{song}',
                     },
                 }],
             }]}],
@@ -170,35 +174,35 @@ def make_disc_advancements(ctx: Context) -> None:
                 "icon": {
                     "id": "minecraft:music_disc_far",
                     "components": {
-                        "minecraft:item_model": f"{namespace}:music_disc_{song}",
+                        "minecraft:item_model": f"bcrmc:music_disc_{song}",
                     },
                 },
                 "title":
                     raisebat_title_component if song == 'raisebat' else
-                    {"translate": f"advancements.{namespace}.music_disc_{song}.title"}
+                    {"translate": f"advancements.bcrmc.music_disc_{song}.title"}
                 ,
-                "description": {"translate": f"advancements.{namespace}.music_disc_{song}.description"},
+                "description": {"translate": f"advancements.bcrmc.music_disc_{song}.description"},
                 "show_toast": True,
                 "announce_to_chat": False,
                 "hidden": True,
             },
-            "parent": f"{namespace}:root_discs",
+            "parent": "bcrmc:root_discs",
             "criteria": {
                 "requirement": {
                     "trigger": "minecraft:recipe_unlocked",
                     "conditions": {
-                        "recipe": f"{namespace}:music_disc_{song}",
+                        "recipe": f"bcrmc:music_disc_{song}",
                     },
                 },
             },
             "rewards": {
                 "recipes": [
-                    f"{namespace}:music_disc_{song}",
+                    f"bcrmc:music_disc_{song}",
                 ],
             },
         })
 
-        ctx.data.advancements[f'{namespace}:music_disc_{song}'] = adv
+        ctx.data.advancements[f'bcrmc:music_disc_{song}'] = adv
 
 def make_disc_recipes(ctx: Context) -> None:
     for resource in ctx.data.jukebox_songs:
@@ -212,17 +216,17 @@ def make_disc_recipes(ctx: Context) -> None:
                 "...",
             ],
             "key": {
-                ".": f"#{namespace}:record_wax",
-                "*": f"#{namespace}:valid_for_record_{song}",
+                ".": "#bcrmc:record_wax",
+                "*": f"#bcrmc:valid_for_record_{song}",
             },
             "result": {
                 "id": "minecraft:music_disc_far",
                 "components": {
-                "minecraft:jukebox_playable": f"{namespace}:{song}",
-                "minecraft:item_model": f"{namespace}:music_disc_{song}",
+                "minecraft:jukebox_playable": f"bcrmc:{song}",
+                "minecraft:item_model": f"bcrmc:music_disc_{song}",
                 },
             },
             "show_notification": True,
         })
 
-        ctx.data.recipes[f'{namespace}:music_disc_{song}'] = recipe
+        ctx.data.recipes[f'bcrmc:music_disc_{song}'] = recipe

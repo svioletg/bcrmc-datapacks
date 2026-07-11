@@ -1,0 +1,10 @@
+execute as @a[scores={sb.killed_by.blaze=10..}] run advancement grant @s only bcrmc:music_disc_burndown
+execute as @a[scores={sb.killed_by.warden=1..}] run advancement grant @s only bcrmc:music_disc_darkzone
+execute as @a[scores={sb.custom.sleep_in_bed=100..}] run advancement grant @s only bcrmc:music_disc_dreams
+execute as @a[scores={sb.killed_by.slime=1..}] run advancement grant @s only bcrmc:music_disc_gbust
+execute as @a[scores={sb.used.totem_of_undying=1..}] run advancement grant @s only bcrmc:music_disc_lucky
+execute as @a[scores={sb.custom.boat_one_cm=10000000..}] run advancement grant @s only bcrmc:music_disc_paradise
+execute as @a[advancements={minecraft:nether/return_to_sender=true}] run advancement grant @s only bcrmc:music_disc_raisebat
+execute as @a[scores={sb.used.honey_bottle=16..}] run advancement grant @s only bcrmc:music_disc_square
+execute as @a[scores={sb.crafted.netherite_sword=1..}] run advancement grant @s only bcrmc:music_disc_sword
+execute as @a[scores={sb.custom.minecart_one_cm=1000000..}] run advancement grant @s only bcrmc:music_disc_tickride
