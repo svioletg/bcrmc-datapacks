@@ -8,6 +8,8 @@
 
 ### Resource pack
 
+- `min_format` and `max_format` are now 91.0
+
 ## [bcrmc7-2026.01.06] - 2026-01-06
 
 ### Datapack
