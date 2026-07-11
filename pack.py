@@ -9,6 +9,8 @@ from typing import Any
 from beet import Advancement, Context, Function, LootTable, Recipe
 from loguru import logger
 
+__version__ = 'bcrmc7-26.3'
+
 logger.remove()
 
 logger.add(sys.stdout, level='INFO', format='<level>[{time:%H:%M:%S} {level}] {message}</level>')
