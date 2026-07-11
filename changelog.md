@@ -4,7 +4,7 @@
 
 ### Datapack
 
-- `min_format` and `max_format` are now 108
+- `min_format` and `max_format` are now 11.0
 
 ### Resource pack
 
