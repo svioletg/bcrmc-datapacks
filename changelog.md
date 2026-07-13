@@ -9,6 +9,8 @@
   - Use cocoa beans to brew
 - Added function `bcrmc:version`
   - Prints the datapack's version
+- Added trigger `bcrmc.version`
+  - Executes function `bcrmc:version`
 
 ### Resource pack
 

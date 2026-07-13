@@ -61,6 +61,10 @@ FLAGGED_CRITERIA: dict[str, str] = {
     )
 }
 
+TRIGGERED_FUNCTIONS: dict[str, str] = {
+    'bcrmc.version': 'bcrmc:version',
+}
+
 MCFUNC_COMMENT_MACRO_PREFIX: str = '#!'
 
 MCFUNC_COMMENT_MACRO_DEFS: dict[str, list[str] | Callable[[Context], str | list[str]]] = {
@@ -70,6 +74,11 @@ MCFUNC_COMMENT_MACRO_DEFS: dict[str, list[str] | Callable[[Context], str | list[
     'create_criteria_flags': [
         f'scoreboard objectives add bcrmc.criteria_flag.{objname} {criteria}'
         for criteria, objname in FLAGGED_CRITERIA.items()
+    ],
+    'do_triggered_functions': [
+        f'execute as @a[scores={{{trigger}=1..}}] run function {func}'
+        + f'\nscoreboard players set @a[scores={{{trigger}=1..}}] {trigger} 0'
+        for trigger, func in TRIGGERED_FUNCTIONS.items()
     ],
     'gamerules':
         (lambda ctx:
@@ -82,6 +91,11 @@ MCFUNC_COMMENT_MACRO_DEFS: dict[str, list[str] | Callable[[Context], str | list[
             [f'loot give @s loot bcrmc:disc_{resource.split(':')[1]}'
             for resource in ctx.data.jukebox_songs]
         ),
+    'register_triggered_functions': [
+        f'scoreboard objectives add {trigger} trigger'
+        + f'\nscoreboard players enable @a {trigger}'
+        for trigger in TRIGGERED_FUNCTIONS
+    ],
     'reset_criteria_flags': [
         f'scoreboard players set @a bcrmc.criteria_flag.{objname} 0'
         for _, objname in FLAGGED_CRITERIA.items()
@@ -146,7 +160,7 @@ def parse_fn(ctx: Context, mcfunction: Function, name: str | None = None) -> lis
         if isinstance(repl := MCFUNC_COMMENT_MACRO_DEFS[key], Callable):
             logger.debug(f'{name}:{lineno}: processing macro: {key}')
             repl = repl(ctx)
-        parsed.append('\n'.join(repl))
+        parsed.append(repl if isinstance(repl, str) else '\n'.join(repl))
 
     return parsed
 
