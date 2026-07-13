@@ -94,7 +94,7 @@ def build_functions(ctx: Context) -> None:
                 continue
             key = line.removeprefix('#$')
             if key not in MCFUNC_COMMENT_MACRO_DEFS:
-                logger.warning(f'Undefined: {key}')
+                logger.warning(f'Undefined macro: {key}')
                 continue
             if isinstance(repl := MCFUNC_COMMENT_MACRO_DEFS[key], Callable):
                 repl = repl(ctx)
