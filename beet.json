@@ -5,7 +5,11 @@
     "data_pack": {
         "load": ["datapack"]
     },
+    "resource_pack": {
+        "load": ["resources"]
+    },
     "pipeline": [
+        "pack.build_pack_mcmeta",
         "pack.build_advancements",
         "pack.build_functions",
         "pack.make_disc_loot_entries",

@@ -2,6 +2,6 @@
     "pack": {
         "min_format": [110, 0],
         "max_format": [110, 0],
-        "description": "Datapack for BCR-MC 7."
+        "description": "Datapack for BCR-MC servers. Version: {version}"
     }
 }

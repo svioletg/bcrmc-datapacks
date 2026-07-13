@@ -20,6 +20,15 @@ logger.add(
     format='<level>[{time:%H:%M:%S} {level}] {message}</level>',
 )
 
+DATAPACK_SOURCE: Path = Path('datapack').absolute()
+RESOURCE_PACK_SOURCE: Path = Path('resources').absolute()
+
+if not (DATAPACK_SOURCE / 'pack.mcmeta').is_file():
+    raise FileNotFoundError(DATAPACK_SOURCE / 'pack.mcmeta')
+
+if not (RESOURCE_PACK_SOURCE / 'pack.mcmeta').is_file():
+    raise FileNotFoundError(RESOURCE_PACK_SOURCE / 'pack.mcmeta')
+
 BEET_JSON: dict[str, Any] = json.loads(Path('beet.json').read_text('utf-8'))
 
 WORLDS: list[str] = ['minecraft:overworld', 'minecraft:the_nether', 'minecraft:the_end']
@@ -101,6 +110,12 @@ def parse_expr(expr: str, context: dict[str, Any]) -> Any:  # noqa: ANN401
             return None
         return EXPR_MATH_INFIX[op](int(a), int(b))
     return context[expr]
+
+def build_pack_mcmeta(ctx: Context) -> None:
+    res, data = ctx.packs
+
+    data.mcmeta.data['pack']['description'] = data.mcmeta.data['pack']['description'].format(version=__version__)
+    res.mcmeta.data['pack']['description'] = res.mcmeta.data['pack']['description'].format(version=__version__)
 
 def build_advancements(ctx: Context) -> None:
     adv_copper_oxidation: Advancement = ctx.data.advancements[f'{ctx.project_name}:manual_oxidation']
