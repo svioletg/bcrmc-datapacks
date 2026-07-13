@@ -54,7 +54,7 @@ FLAGGED_CRITERIA: dict[str, str] = {
 
 MCFUNC_COMMENT_MACRO_PREFIX: str = '#$'
 
-MCFUNC_COMMENT_MACRO_DEFS: dict[str, str | list[str] | Callable[[Context], str | list[str]]] = {
+MCFUNC_COMMENT_MACRO_DEFS: dict[str, list[str] | Callable[[Context], str | list[str]]] = {
     'calc_disc_total':
         (lambda ctx:
             f'scoreboard players set $bcrmc bcrmc.CUSTOM_DISCS_TOTAL {len(ctx.data.jukebox_songs)}'),
@@ -62,12 +62,27 @@ MCFUNC_COMMENT_MACRO_DEFS: dict[str, str | list[str] | Callable[[Context], str |
         f'scoreboard objectives add bcrmc.criteria_flag.{objname} {criteria}'
         for criteria, objname in FLAGGED_CRITERIA.items()
     ],
+    'gamerules':
+        (lambda ctx:
+            [f'tellraw @a {{"text":"{ctx.project_name}: in {world}; gamerule {rule} {state}", "color": "yellow"}}'
+            + f'\nexecute in {world} run gamerule {rule} {state}'
+            for world in WORLDS for rule, state in GAMERULES.items()]
+        ),
+    'give_custom_discs':
+        (lambda ctx:
+            [f'loot give @s loot bcrmc:disc_{resource.split(':')[1]}'
+            for resource in ctx.data.jukebox_songs]
+        ),
     'reset_criteria_flags': [
         f'scoreboard players set @a bcrmc.criteria_flag.{objname} 0'
         for _, objname in FLAGGED_CRITERIA.items()
     ],
     'tell_version': [
         f'tellraw @s {{"text": "[bcrmc] datapack version: {__version__}", "color": "yellow"}}',
+    ],
+    'worldborders': [
+        f'execute in {world} run worldborder set 12000'
+        for world in WORLDS
     ],
 }
 
@@ -93,65 +108,37 @@ def build_advancements(ctx: Context) -> None:
         recipe for recipe in ctx.data.recipes if ':oxidize_' in recipe
     ]}
 
-def build_functions(ctx: Context) -> None:
-    def parse_fn(mcfunction: Function) -> list[str]:
-        parsed: list[str] = []
-        for line in mcfunction.lines:
-            if not line.startswith(MCFUNC_COMMENT_MACRO_PREFIX):
-                parsed.append(line)
-                continue
+def parse_fn(ctx: Context, mcfunction: Function, name: str | None = None) -> list[str]:
+    name = name or '<unknown>'
 
-            key = line.removeprefix('#$')
-
-            if key not in MCFUNC_COMMENT_MACRO_DEFS:
-                logger.warning(f'Undefined macro: {key}')
-                continue
-
-            if isinstance(repl := MCFUNC_COMMENT_MACRO_DEFS[key], Callable):
-                repl = repl(ctx)
-            parsed.append(repl if isinstance(repl, str) else '\n'.join(repl))
-
-        return parsed
-
-    # init
-    fn_init: Function = ctx.data.functions[f'{ctx.project_name}:init']
-    fn_init.lines = parse_fn(fn_init)
-
-    # tick
-    fn_tick: Function = ctx.data.functions[f'{ctx.project_name}:tick']
-    fn_tick_built: list[str] = []
-    for ln in fn_tick.lines:
-        if ln.startswith('#$reset_criteria_flags'):
-            fn_tick_built.append(ln.replace(
-                '#$reset_criteria_flags',
-                '\n'.join(
-                    f'scoreboard players set @a bcrmc.criteria_flag.{objname} 0'
-                    for _, objname in FLAGGED_CRITERIA.items()
-                ),
-            ))
+    parsed: list[str] = []
+    for lineno, line in enumerate(mcfunction.lines, 1):
+        if not line.startswith(MCFUNC_COMMENT_MACRO_PREFIX):
+            # If it's not a macro line, add as is and move on
+            parsed.append(line)
             continue
-        fn_tick_built.append(ln)
-    fn_tick.lines = fn_tick_built.copy()
 
-    # gamerules
-    ctx.data.functions[f'{ctx.project_name}:gamerules'] = (fn_gamerules := Function())
-    for world in WORLDS:
-        for rule, state in GAMERULES.items():
-            fn_gamerules.lines.append(
-                f'tellraw @a {{"text":"{ctx.project_name}: in {world}; gamerule {rule} {state}", "color": "yellow"}}',
-            )
-            fn_gamerules.lines.append(f'execute in {world} run gamerule {rule} {state}')
+        key = line.removeprefix('#$')
 
-    # worldborder
-    ctx.data.functions[f'{ctx.project_name}:worldborder'] = (fn_worldborder := Function())
-    for world in WORLDS:
-        fn_worldborder.lines.append(f'execute in {world} run worldborder set 12000')
+        if not key:
+            logger.warning(f'{name}:{lineno}: no macro key given')
+            continue
 
-    # give_custom_discs
-    ctx.data.functions[f'{ctx.project_name}:give_custom_discs'] = (fn_give_custom_discs := Function())
-    for resource in ctx.data.jukebox_songs:
-        namespace, song = resource.split(':')
-        fn_give_custom_discs.lines.append(f'loot give @p loot bcrmc:disc_{song}')
+        if key not in MCFUNC_COMMENT_MACRO_DEFS:
+            logger.warning(f'{name}:{lineno}: undefined macro: {key}')
+            continue
+
+        if isinstance(repl := MCFUNC_COMMENT_MACRO_DEFS[key], Callable):
+            logger.debug(f'{name}:{lineno}: processing macro: {key}')
+            repl = repl(ctx)
+        parsed.append('\n'.join(repl))
+
+    return parsed
+
+def build_functions(ctx: Context) -> None:
+    # Parse macros
+    for name, mcfunc in ctx.data.functions.items():
+        ctx.data.functions[name].lines = parse_fn(ctx, mcfunc, name)
 
 def make_disc_loot_entries(ctx: Context) -> None:
     for resource in ctx.data.jukebox_songs:
