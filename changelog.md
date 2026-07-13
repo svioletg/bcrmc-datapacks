@@ -7,6 +7,8 @@
 - `min_format` and `max_format` are now 110.0
 - Haste potion crafting table recipes have been replaced with proper brewing recipes
   - Use cocoa beans to brew
+- Added function `bcrmc:version`
+  - Prints the datapack's version
 
 ### Resource pack
 
