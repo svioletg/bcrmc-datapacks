@@ -66,6 +66,9 @@ MCFUNC_COMMENT_MACRO_DEFS: dict[str, str | list[str] | Callable[[Context], str |
         f'scoreboard players set @a bcrmc.criteria_flag.{objname} 0'
         for _, objname in FLAGGED_CRITERIA.items()
     ],
+    'tell_version': [
+        f'tellraw @s {{"text": "[bcrmc] datapack version: {__version__}", "color": "yellow"}}',
+    ],
 }
 
 def parse_expr(expr: str, context: dict[str, Any]) -> Any:  # noqa: ANN401
