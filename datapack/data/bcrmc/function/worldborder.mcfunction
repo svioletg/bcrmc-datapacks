@@ -1,1 +1,1 @@
-#$worldborders
+#!worldborders

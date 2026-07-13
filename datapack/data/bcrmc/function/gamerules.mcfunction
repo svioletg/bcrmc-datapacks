@@ -1,1 +1,1 @@
-#$gamerules
+#!gamerules

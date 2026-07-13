@@ -1,1 +1,1 @@
-#$tell_version
+#!tell_version

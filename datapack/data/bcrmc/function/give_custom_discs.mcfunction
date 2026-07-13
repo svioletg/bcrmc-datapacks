@@ -1,1 +1,1 @@
-#$give_custom_discs
+#!give_custom_discs

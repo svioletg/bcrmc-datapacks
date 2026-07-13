@@ -61,7 +61,7 @@ FLAGGED_CRITERIA: dict[str, str] = {
     )
 }
 
-MCFUNC_COMMENT_MACRO_PREFIX: str = '#$'
+MCFUNC_COMMENT_MACRO_PREFIX: str = '#!'
 
 MCFUNC_COMMENT_MACRO_DEFS: dict[str, list[str] | Callable[[Context], str | list[str]]] = {
     'calc_disc_total':
@@ -133,7 +133,7 @@ def parse_fn(ctx: Context, mcfunction: Function, name: str | None = None) -> lis
             parsed.append(line)
             continue
 
-        key = line.removeprefix('#$')
+        key = line.removeprefix(MCFUNC_COMMENT_MACRO_PREFIX).strip()
 
         if not key:
             logger.warning(f'{name}:{lineno}: no macro key given')
