@@ -97,13 +97,17 @@ def build_functions(ctx: Context) -> None:
             if not line.startswith(MCFUNC_COMMENT_MACRO_PREFIX):
                 parsed.append(line)
                 continue
+
             key = line.removeprefix('#$')
+
             if key not in MCFUNC_COMMENT_MACRO_DEFS:
                 logger.warning(f'Undefined macro: {key}')
                 continue
+
             if isinstance(repl := MCFUNC_COMMENT_MACRO_DEFS[key], Callable):
                 repl = repl(ctx)
             parsed.append(repl if isinstance(repl, str) else '\n'.join(repl))
+
         return parsed
 
     # init
