@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+    echo "! Missing file argument"
+    exit 1
+fi
+
+File=$1
+
+if [[ -z $(unzip -Z1 "${1}" | grep 'pack.mcmeta') ]]; then
+    echo "! pack.mcmeta not found in archive: ${File}"
+    exit 1
+else
+    echo "pack.mcmeta found in archive: ${File}"
+    exit 0
+fi
