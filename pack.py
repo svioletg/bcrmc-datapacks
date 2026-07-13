@@ -73,7 +73,7 @@ MCFUNC_COMMENT_MACRO_DEFS: dict[str, list[str] | Callable[[Context], str | list[
     ],
     'gamerules':
         (lambda ctx:
-            [f'tellraw @a {{"text":"{ctx.project_name}: in {world}; gamerule {rule} {state}", "color": "yellow"}}'
+            [f'tellraw @a {{"text":"[bcrmc] in {world}: gamerule {rule} {state}", "color": "yellow"}}'
             + f'\nexecute in {world} run gamerule {rule} {state}'
             for world in WORLDS for rule, state in GAMERULES.items()]
         ),
