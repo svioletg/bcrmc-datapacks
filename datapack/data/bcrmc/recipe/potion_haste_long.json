@@ -1,15 +1,25 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:potion",
-    "minecraft:nether_wart",
-    "minecraft:cocoa_beans",
-    "minecraft:sugar",
-    "minecraft:redstone"
-  ],
-  "result": {
-    "id": "potion",
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:haste": {
+              "amplifier": 0,
+              "duration": 3600
+            }
+          }
+        ]
+      }
+    }
+  },
+  "reagent": {
+    "item": "minecraft:redstone"
+  },
+  "output": {
+    "id": "minecraft:potion",
     "components": {
       "minecraft:potion_contents": {
         "custom_color": 16380011,
@@ -18,10 +28,14 @@
           {
             "id": "minecraft:haste",
             "amplifier": 0,
-            "duration": 9600
+            "duration": 9600,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }
-    }
+    },
+    "count": 1
   }
 }

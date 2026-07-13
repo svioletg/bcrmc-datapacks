@@ -1,15 +1,24 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "minecraft:potion",
-    "minecraft:nether_wart",
-    "minecraft:cocoa_beans",
-    "minecraft:sugar",
-    "minecraft:glowstone_dust"
-  ],
-  "result": {
-    "id": "potion",
+  "type": "minecraft:brewing",
+  "input": {
+    "item": "minecraft:potion",
+    "potion_contents": {
+      "effects": {
+        "contains": [
+          {
+            "minecraft:haste": {
+              "amplifier": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "reagent": {
+    "item": "minecraft:glowstone_dust"
+  },
+  "output": {
+    "id": "minecraft:potion",
     "components": {
       "minecraft:potion_contents": {
         "custom_color": 16380011,
@@ -18,10 +27,14 @@
           {
             "id": "minecraft:haste",
             "amplifier": 1,
-            "duration": 1800
+            "duration": 1800,
+            "ambient": false,
+            "show_particles": true,
+            "show_icon": true
           }
         ]
       }
-    }
+    },
+    "count": 1
   }
 }

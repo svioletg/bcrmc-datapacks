@@ -1,7 +1,7 @@
 {
   "type": "minecraft:brewing",
   "input": {
-    "item": "minecraft:potion",
+    "item": "minecraft:splash_potion",
     "potion_contents": {
       "potions": "minecraft:awkward"
     }
@@ -10,7 +10,7 @@
     "item": "minecraft:cocoa_beans"
   },
   "output": {
-    "id": "minecraft:potion",
+    "id": "minecraft:splash_potion",
     "components": {
       "minecraft:potion_contents": {
         "custom_color": 16380011,
