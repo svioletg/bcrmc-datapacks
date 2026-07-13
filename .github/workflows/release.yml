@@ -1,0 +1,31 @@
+name: Build pack ZIPs and attach to release
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    build-and-upload:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+
+        steps:
+            - uses: actions/checkout@v7
+            - name: Build
+              run: |
+                cd dist
+
+                cd bcrmc_data_pack
+                zip -r "../bcrmc-datapack-${{ github.event.release.tag_name }}.zip" .
+                ./is-pack "../bcrmc-datapack-${{ github.event.release.tag_name }}.zip"
+                cd ..
+
+                cd bcrmc_resource_pack
+                zip -r "../bcrmc-resources-${{ github.event.release.tag_name }}.zip" .
+                ./is-pack "../bcrmc-resources-${{ github.event.release.tag_name }}.zip"
+            - name: Upload build to release
+              if: ${{ github.event_name != 'workflow_dispatch' }}
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: gh release upload "${{ github.event.release.tag_name }}" *.zip --clobber
