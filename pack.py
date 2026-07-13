@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import sys
 from collections.abc import Callable
@@ -13,7 +14,11 @@ __version__ = 'bcrmc7-26.3snap3'
 
 logger.remove()
 
-logger.add(sys.stdout, level='INFO', format='<level>[{time:%H:%M:%S} {level}] {message}</level>')
+logger.add(
+    sys.stdout,
+    level=os.environ.get('BCRMC_LOG_LEVEL', 'INFO'),
+    format='<level>[{time:%H:%M:%S} {level}] {message}</level>',
+)
 
 BEET_JSON: dict[str, Any] = json.loads(Path('beet.json').read_text('utf-8'))
 
