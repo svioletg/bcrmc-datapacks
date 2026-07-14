@@ -18,6 +18,14 @@
 
 - `min_format` and `max_format` are now 97.1
 
+### Internal
+
+- Added type alias `models.Predicate` (`dict`)
+- Added class `models.ItemModifier`
+- Added class `models.LootEntry`
+- Added class `models.LootPool`
+- Added class `models.LootTable`
+
 ## [bcrmc7-2026.01.06] - 2026-01-06
 
 ### Datapack
