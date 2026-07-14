@@ -2,4 +2,5 @@ beet>=0.119.0
 loguru>=0.7.3
 mecha>=0.106.0
 pydantic>=2.12.4
+rich>=15.0.0
 ruff>=0.15.21
