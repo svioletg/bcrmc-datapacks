@@ -172,7 +172,7 @@ def parse_fn(ctx: Context, mcfunction: Function, name: str | None = None) -> lis
 def build_functions(ctx: Context) -> None:
     # Parse macros
     for name, mcfunc in ctx.data.functions.items():
-        ctx.data.functions[name].lines = parse_fn(ctx, mcfunc, name)
+        mcfunc.lines = parse_fn(ctx, mcfunc, name)  # ty: ignore[invalid-attribute-access] ; works fine
 
 def make_disc_loot_entries(ctx: Context) -> None:
     for resource in ctx.data.jukebox_songs:
