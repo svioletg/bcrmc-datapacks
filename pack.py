@@ -226,7 +226,9 @@ def make_disc_advancements(ctx: Context) -> None:
                 "requirement": {
                     "trigger": "minecraft:recipe_unlocked",
                     "conditions": {
-                        "recipe": f"bcrmc:music_disc_{song}",
+                        "recipes": [
+                            f"bcrmc:music_disc_{song}",
+                        ],
                     },
                 },
             },
@@ -256,6 +258,7 @@ def make_disc_recipes(ctx: Context) -> None:
             },
             "result": {
                 "id": "minecraft:music_disc_far",
+                "count": 1,
                 "components": {
                 "minecraft:jukebox_playable": f"bcrmc:{song}",
                 "minecraft:item_model": f"bcrmc:music_disc_{song}",
