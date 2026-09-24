@@ -10,9 +10,9 @@ from typing import Any
 from beet import Advancement, Context, Function, LootTable, Recipe
 from loguru import logger
 
-__version__ = 'bcrmc-26.3'
+__version__ = '2026.09.24+26.3'
 
-VERSION_REGEX: re.Pattern[str] = re.compile(r'^bcrmc-(?P<mcversion>[0-9a-z.]+)(?:-r(?P<revision>\d+))?$')
+VERSION_REGEX: re.Pattern[str] = re.compile(r'^(?P<date>\d{4}\.\d\d\.\d\d)\+(?P<mcversion>[0-9a-z.]+)$')
 
 if not VERSION_REGEX.match(__version__):
     raise ValueError(f'__version__ does not match defined pattern: {__version__!r}')
