@@ -10,7 +10,7 @@ from typing import Any
 from beet import Advancement, Context, Function, LootTable, Recipe
 from loguru import logger
 
-__version__ = 'bcrmc-26.3snap3'
+__version__ = 'bcrmc-26.3'
 
 VERSION_REGEX: re.Pattern[str] = re.compile(r'^bcrmc-(?P<mcversion>[0-9a-z.]+)(?:-r(?P<revision>\d+))?$')
 
