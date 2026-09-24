@@ -4,6 +4,7 @@
 
 ### Datapack
 
+- Pack namespace is now `bcrmc`
 - `min_format` and `max_format` are now 121.0
 - Haste potion crafting table recipes have been replaced with proper brewing recipes
   - Use cocoa beans to brew
