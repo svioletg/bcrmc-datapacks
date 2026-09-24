@@ -1,20 +1,21 @@
 # Changelog
 
-## [bcrmc7-26.3]
+## [2026.09.24+26.3] - 2026-09-24
 
 ### Datapack
 
-- `min_format` and `max_format` are now 110.0
+- `min_format` and `max_format` are now 121.0
 - Haste potion crafting table recipes have been replaced with proper brewing recipes
   - Use cocoa beans to brew
 - Added function `bcrmc:version`
   - Prints the datapack's version
 - Added trigger `bcrmc.version`
   - Executes function `bcrmc:version`
+- Advancement format has been updated to support 26.3
 
 ### Resource pack
 
-- `min_format` and `max_format` are now 91.0
+- `min_format` and `max_format` are now 97.1
 
 ## [bcrmc7-2026.01.06] - 2026-01-06
 
