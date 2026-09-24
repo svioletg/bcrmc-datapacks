@@ -1,4 +1,4 @@
-beet>=0.116.0
+beet>=0.119.0
 ipython>=9.6.0
 loguru>=0.7.3
 mecha>=0.104.1
