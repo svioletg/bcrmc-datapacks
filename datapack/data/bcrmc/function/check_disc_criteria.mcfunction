@@ -8,3 +8,4 @@ execute as @a[advancements={minecraft:nether/return_to_sender=true}] run advance
 execute as @a[scores={sb.used.honey_bottle=16..}] run advancement grant @s only bcrmc:music_disc_square
 execute as @a[scores={sb.crafted.netherite_sword=1..}] run advancement grant @s only bcrmc:music_disc_sword
 execute as @a[scores={sb.custom.minecart_one_cm=1000000..}] run advancement grant @s only bcrmc:music_disc_tickride
+execute as @a[scores={bcrmc.ticks_in_winter=24000..}] run advancement grant @s only bcrmc:music_disc_glowsnow
