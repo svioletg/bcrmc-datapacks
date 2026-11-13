@@ -95,6 +95,14 @@
             }
         ]
     },
+    "music_disc.scltfrst": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/scltfrst",
+                "attenuation_distance": 16
+            }
+        ]
+    },
     "music_disc.darkzone": {
         "sounds": [
             {
