@@ -184,8 +184,8 @@ def make_disc_loot_entries(ctx: Context) -> None:
             'pools': [{'rolls': 1, 'entries': [{
                 'type': 'minecraft:item',
                 'name': 'minecraft:music_disc_far',
-                'functions': [{
-                    'function': 'set_components',
+                'modifier': [{
+                    'type': 'set_components',
                     'components': {
                         'minecraft:jukebox_playable': resource,
                         'minecraft:item_model': f'bcrmc:music_disc_{song}',
