@@ -10,6 +10,8 @@ from typing import Any
 from beet import Advancement, Context, Function, LootTable, Recipe
 from loguru import logger
 
+from const import console
+
 __version__ = '2026.09.24+26.3'
 
 VERSION_REGEX: re.Pattern[str] = re.compile(r'^(?P<date>\d{4}\.\d\d\.\d\d)\+(?P<mcversion>[0-9a-z.]+)$')
@@ -120,12 +122,12 @@ def parse_expr(expr: str, context: dict[str, Any]) -> Any:  # noqa: ANN401
         return len(context[expr.removeprefix('#')])
     if ops_in_expr := [op for op in EXPR_MATH_INFIX if op in expr]:
         if len(ops_in_expr) > 1:
-            print(f'ERR: Expression can only have one math operator: {expr}')
+            console.print(f'ERR: Expression can only have one math operator: {expr}')
             return None
         op: str = ops_in_expr[0]
         a, b = (parse_expr(e, context) for e in expr.split(op))
         if (not a) or (not b):
-            print(f'ERR: One or both of the operands in this expression are empty: {expr}')
+            console.print(f'ERR: One or both of the operands in this expression are empty: {expr}')
             return None
         return EXPR_MATH_INFIX[op](int(a), int(b))
     return context[expr]
@@ -270,7 +272,7 @@ def make_disc_recipes(ctx: Context) -> None:
         ctx.data.recipes[f'bcrmc:music_disc_{song}'] = recipe
 
 def main() -> int:
-    print(__version__)
+    console.print(__version__)
 
     return 0
 
