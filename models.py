@@ -1,6 +1,7 @@
+from operator import is_none
 from typing import Literal
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 type ItemModifier = ItemModifierCopyName | ItemModifierSetComponents
 type TextComponent = dict # TODO: create TextComponent model
@@ -21,26 +22,13 @@ class AdvancementDisplay(BaseModel):
     announce_to_chat: bool = True
     hidden: bool = False
 
-# Definition sourced from: https://minecraft.wiki/w/Advancement_definition#File_format
-class Advancement(BaseModel):
-    parent: str | None = None
-    display: AdvancementDisplay
-    criteria: dict[str, 'Criterion']
-    requirements: list[list[str]] | None = None
-    rewards: ... # TODO
-    sends_telemetry_event: bool = False
-
-class Criterion(BaseModel):
-    trigger: str
-    conditions: ... # TODO
-
 # Definition sourced from: https://minecraft.wiki/w/Item_modifier#Format
 class ItemModifierBase(BaseModel):
     function: str
     conditions: list[Predicate] = []
 
 class ItemModifierCopyName(ItemModifierBase):
-    function: Literal['copy_name'] = 'copy_name'
+    function: Literal['copy_name'] = 'copy_name'  # ty: ignore[incompatible-mutable-override]
     source: Literal[
         'block_entity',
         'this',
@@ -52,7 +40,7 @@ class ItemModifierCopyName(ItemModifierBase):
     ]
 
 class ItemModifierSetComponents(ItemModifierBase):
-    function: Literal['set_components'] = 'set_components'
+    function: Literal['set_components'] = 'set_components'  # ty: ignore[incompatible-mutable-override]
     components: dict[str, str]
 
 # Definition sourced from: https://minecraft.wiki/w/Loot_table#Entry
@@ -91,11 +79,10 @@ class Sound(BaseModel):
     preload: bool = False
     type: Literal['file', 'event'] = 'file'
 
-# Definition sourced from: https://minecraft.wiki/w/Sounds.json
+# Definition sourced from: https://minecraft.wiki/w/Sounds.json#Server-side_sound_events
 class SoundEvent(BaseModel):
-    replace: bool = False
-    subtitle: str
-    sounds: list[str | Sound]
+    sound_id: str
+    range: float | None = Field(default=None, exclude_if=is_none)
 
 # Definition sourced from: https://minecraft.wiki/w/Jukebox_song_definition
 class JukeboxSong(BaseModel):
