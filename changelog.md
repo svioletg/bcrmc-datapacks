@@ -87,7 +87,7 @@
 
 ### Datapack
 
-- 2 new music discs added
+- 3 new music discs added
   <details>
   <summary>(Secret content spoilers; click to reveal)</summary>
 
