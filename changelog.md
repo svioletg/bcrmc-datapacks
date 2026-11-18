@@ -1,5 +1,29 @@
 # Changelog
 
+## [Unreleased]
+
+### Datapack
+
+- Added scoreboard objective `bcrmc.ticks_in_winter`
+- Added biome tag `winter_biomes`
+- 2 new music discs added
+  <details>
+  <summary>(Secret content spoilers; click to reveal)</summary>
+
+  - `norwood`: *Norwegian Wood*, The Beatles
+  - `scltfrst`: *Scarlet Forest*, Toby Fox
+  </details>
+
+### Internal
+
+- Added module `const`
+- Added module `errors`
+- Added module `util`
+- Added music disc creation script `mkdisc.py` (#5)
+- Added `more-itertools` to dependencies
+- Added `rich` to dependencies
+- Use `rich` console for printing
+
 ## [2026.09.24+26.3] - 2026-09-24
 
 ### Datapack
