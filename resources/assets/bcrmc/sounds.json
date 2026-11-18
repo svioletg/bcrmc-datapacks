@@ -182,5 +182,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.norwood": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/norwood",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

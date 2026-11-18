@@ -21,9 +21,9 @@
     "advancements.bcrmc.music_disc_mansion.description": "Crafted the \"Resident Evil Director's Cut DualShock OST - Mansion Basement\" music disc",
     "advancements.bcrmc.music_disc_paradise.title": "An Island Getaway",
     "advancements.bcrmc.music_disc_paradise.description": "Crafted the \"Paradise, Paradise\" music disc (or, travelled 100km by boat)",
-    "advancements.bcrmc.music_disc_raisebat.title": "RAISE UP YOUR BAT FOR §mTHE BURNING FIGHT§r §lBASEBALL DELIGHT§r",
+    "advancements.bcrmc.music_disc_raisebat.title": "RAISE UP YOUR BAT FOR \u00a7mTHE BURNING FIGHT\u00a7r \u00a7lBASEBALL DELIGHT\u00a7r",
     "advancements.bcrmc.music_disc_raisebat.description": "Crafted the \"Raise Up Your Bat\" music disc (or, batted a Fire Charge back at a Ghast)",
-    "advancements.bcrmc.music_disc_rudrbust.title": "The Weather Always Sticks Together§e★§f",
+    "advancements.bcrmc.music_disc_rudrbust.title": "The Weather Always Sticks Together\u00a7e\u2605\u00a7f",
     "advancements.bcrmc.music_disc_rudrbust.description": "Crafted the \"Ruder Buster\" music disc",
     "advancements.bcrmc.music_disc_rvlution.title": "Take My Revolution",
     "advancements.bcrmc.music_disc_rvlution.description": "Crafted the \"Rondo-Revolution\" music disc",
@@ -42,16 +42,14 @@
     "advancements.bcrmc.music_disc_yesheart.title": "You've Got To Want To Succeed",
     "advancements.bcrmc.music_disc_yesheart.description": "Crafted the \"Owner of a Lonely Heart\" music disc",
     "advancements.bcrmc.root.title": "BCR-MC 7",
-    "advancements.bcrmc.root.description": "§bChase the Skies§f edition!",
+    "advancements.bcrmc.root.description": "\u00a7bChase the Skies\u00a7f edition!",
     "advancements.bcrmc.root_discs.title": "Secret Music Discs",
     "advancements.bcrmc.root_discs.description": "Collect them all! (Check the site for details!)",
     "advancements.bcrmc.manual_oxidation.title": "Manual Copper Oxidation",
     "advancements.bcrmc.manual_oxidation.description": "Smelt any kind of copper block to advance its oxidation by one stage",
-
     "item.minecraft.potion.effect.haste": "Potion of Haste",
     "item.minecraft.splash_potion.effect.haste": "Splash Potion of Haste",
     "item.minecraft.lingering_potion.effect.haste": "Lingering Potion of Haste",
-
     "jukebox_song.bcrmc.buddybad": "weezer buddy holy free download online mp3",
     "jukebox_song.bcrmc.buddydlx": "Weezer - Buddy Holly",
     "jukebox_song.bcrmc.burndown": "Talking Heads - Burning Down the House",
@@ -71,5 +69,8 @@
     "jukebox_song.bcrmc.sword": "Toby Fox - SWORD",
     "jukebox_song.bcrmc.tickride": "Ticket To Ride - The Beatles",
     "jukebox_song.bcrmc.xmas": "Paul McCartney - Wonderful Christmastime",
-    "jukebox_song.bcrmc.yesheart": "Yes - Owner of a Lonely Heart"
+    "jukebox_song.bcrmc.yesheart": "Yes - Owner of a Lonely Heart",
+    "advancements.bcrmc.music_disc_norwood.title": "Isn't It Good",
+    "advancements.bcrmc.music_disc_norwood.description": "Crafted the \"Norwegian Wood (This Bird Has Flown)\" music disc",
+    "jukebox_song.bcrmc.norwood": "The Beatles - Norwegian Wood (This Bird Has Flown)"
 }

@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc:music_disc.norwood"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc.norwood"
+    },
+    "length_in_seconds": 122.819252,
+    "comparator_output": 15
+}
