@@ -13,7 +13,7 @@
     "show_toast": true,
     "announce_to_chat": false,
     "hidden": false,
-    "background": "minecraft:block/sand"
+    "background": "minecraft:block/orange_poplar_leaves"
   },
   "criteria": {
     "tick": {
