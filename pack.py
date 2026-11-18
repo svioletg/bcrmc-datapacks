@@ -178,7 +178,7 @@ def build_functions(ctx: Context) -> None:
 
 def make_disc_loot_entries(ctx: Context) -> None:
     for resource in ctx.data.jukebox_songs:
-        namespace, song = resource.split(':')
+        _namespace, song = resource.split(':')
 
         loot_table = LootTable({
             'pools': [{'rolls': 1, 'entries': [{
@@ -204,7 +204,7 @@ def make_disc_advancements(ctx: Context) -> None:
     ]
 
     for resource in ctx.data.jukebox_songs:
-        namespace, song = resource.split(':')
+        _namespace, song = resource.split(':')
 
         adv = Advancement({
             "display": {
@@ -245,7 +245,7 @@ def make_disc_advancements(ctx: Context) -> None:
 
 def make_disc_recipes(ctx: Context) -> None:
     for resource in ctx.data.jukebox_songs:
-        namespace, song = resource.split(':')
+        _namespace, song = resource.split(':')
 
         recipe = Recipe({
             "type": "minecraft:crafting_shaped",
