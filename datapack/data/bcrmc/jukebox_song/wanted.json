@@ -1,0 +1,10 @@
+{
+    "sound_event": {
+        "sound_id": "bcrmc:music_disc.wanted"
+    },
+    "description": {
+        "translate": "jukebox_song.bcrmc.wanted"
+    },
+    "length_in_seconds": 290.609229,
+    "comparator_output": 15
+}

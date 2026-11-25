@@ -190,5 +190,13 @@
                 "attenuation_distance": 16
             }
         ]
+    },
+    "music_disc.wanted": {
+        "sounds": [
+            {
+                "name": "bcrmc:records/wanted",
+                "attenuation_distance": 16
+            }
+        ]
     }
 }

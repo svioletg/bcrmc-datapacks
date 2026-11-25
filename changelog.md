@@ -6,12 +6,13 @@
 
 - Added scoreboard objective `bcrmc.ticks_in_winter`
 - Added biome tag `winter_biomes`
-- 2 new music discs added
+- 3 new music discs added
   <details>
   <summary>(Secret content spoilers; click to reveal)</summary>
 
   - `norwood`: *Norwegian Wood*, The Beatles
   - `scltfrst`: *Scarlet Forest*, Toby Fox
+  - `wanted`: *Wanted Dead or Alive*, Bon Jovi
   </details>
 
 ### Internal

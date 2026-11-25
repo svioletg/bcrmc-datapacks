@@ -49,11 +49,9 @@
     "advancements.bcrmc.root_discs.title": "Secret Music Discs",
     "advancements.bcrmc.root.description": "\u00a76Wilderness Bound\u00a7f edition!",
     "advancements.bcrmc.root.title": "BCR-MC 8",
-
     "item.minecraft.lingering_potion.effect.haste": "Lingering Potion of Haste",
     "item.minecraft.potion.effect.haste": "Potion of Haste",
     "item.minecraft.splash_potion.effect.haste": "Splash Potion of Haste",
-
     "jukebox_song.bcrmc.buddybad": "weezer buddy holy free download online mp3",
     "jukebox_song.bcrmc.buddydlx": "Weezer - Buddy Holly",
     "jukebox_song.bcrmc.burndown": "Talking Heads - Burning Down the House",
@@ -74,5 +72,8 @@
     "jukebox_song.bcrmc.sword": "Toby Fox - SWORD",
     "jukebox_song.bcrmc.tickride": "Ticket To Ride - The Beatles",
     "jukebox_song.bcrmc.xmas": "Paul McCartney - Wonderful Christmastime",
-    "jukebox_song.bcrmc.yesheart": "Yes - Owner of a Lonely Heart"
+    "jukebox_song.bcrmc.yesheart": "Yes - Owner of a Lonely Heart",
+    "advancements.bcrmc.music_disc_wanted.title": "On a Steel Horse I Ride",
+    "advancements.bcrmc.music_disc_wanted.description": "Crafted the \"Wanted Dead or Alive\" music disc (or, travelled 10km by horse)",
+    "jukebox_song.bcrmc.wanted": "Bon Jovi - Wanted Dead or Alive"
 }
