@@ -12,7 +12,7 @@ from loguru import logger
 
 from const import console
 
-__version__ = '2026.09.24+26.3'
+__version__ = '2026.11.25+26.3'
 
 VERSION_REGEX: re.Pattern[str] = re.compile(r'^(?P<date>\d{4}\.\d\d\.\d\d)\+(?P<mcversion>[0-9a-z.]+)$')
 

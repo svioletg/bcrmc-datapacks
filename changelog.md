@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [2026.11.25+26.3]
 
 ### Datapack
 
