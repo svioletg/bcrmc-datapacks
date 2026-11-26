@@ -10,3 +10,4 @@ execute as @a[scores={sb.crafted.netherite_sword=1..}] run advancement grant @s 
 execute as @a[scores={sb.custom.minecart_one_cm=1000000..}] run advancement grant @s only bcrmc:music_disc_tickride
 execute as @a[scores={bcrmc.ticks_in_winter=24000..}] run advancement grant @s only bcrmc:music_disc_glowsnow
 execute as @a[scores={sb.custom.horse_one_cm=1000000..}] run advancement grant @s only bcrmc:music_disc_wanted
+execute as @a[scores={bcrmc.ticks_in_autumn=24000..}] run advancement grant @s only bcrmc:music_disc_scltfrst
